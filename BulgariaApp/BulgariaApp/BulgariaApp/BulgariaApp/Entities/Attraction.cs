@@ -19,7 +19,7 @@ namespace BulgariaApp.Entities
         public string Description { get; set; }
         [Required]
         public string Picture { get; set; }
-       
+
         [Required]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }

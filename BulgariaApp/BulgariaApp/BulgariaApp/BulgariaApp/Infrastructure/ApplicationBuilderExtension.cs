@@ -24,40 +24,12 @@ namespace BulgariaApp.Infrastructure
             var dataCategory = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedCategories(dataCategory);
 
-            var dataAttraction = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            SeedAttraction(dataAttraction);
+          
 
             return app;
         }
 
-        private static void SeedAttraction(ApplicationDbContext dataAttraction)
-        {
-            if (dataAttraction.Attractions.Any())
-            {
-                return;
-            }
-            dataAttraction.Attractions.AddRange(new[]
-            {
-
-                new Attraction{AttractionName="Madara Horseman" },
-                new Attraction{AttractionName="Rila Monastery" },
-                new Attraction{AttractionName="the Krakra fortress" },
-                new Attraction{AttractionName="Krushun waterfall" },
-                new Attraction{AttractionName="The Rocks of Belogradchik" },
-                new Attraction{AttractionName="Thorn Gorge" },
-                new Attraction{AttractionName="The seven Rila lakes" },
-                new Attraction{AttractionName="The paradise splash waterfall" },
-                new Attraction{AttractionName="Devil's Throat Cave" },
-                new Attraction{AttractionName="Black Sea" },
-                new Attraction{AttractionName="Borovets" },
-                new Attraction{AttractionName="Vihren peak" },
-                new Attraction{AttractionName="Musala peak" },
-                new Attraction{AttractionName="Slavei hut" },
-                new Attraction{AttractionName="Srebarna Nature Reserve" },
-                new Attraction{AttractionName="Holy Forty Martyrs Church "},
-            });
-            dataAttraction.SaveChanges();
-        }
+       
 
         private static void SeedCategories(ApplicationDbContext dataCategory)
         {

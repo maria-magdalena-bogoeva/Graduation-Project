@@ -1,6 +1,8 @@
+using BulgariaApp.Abstraction;
 using BulgariaApp.Data;
 using BulgariaApp.Entities;
 using BulgariaApp.Infrastructure;
+using BulgariaApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +38,7 @@ namespace BulgariaApp
 
             //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseLazyLoadingProxies()
@@ -49,8 +52,12 @@ namespace BulgariaApp
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<IExcursionService, ExcursionService>();
 
-            services.AddControllersWithViews();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IAttractionService, AttractionService>();
+
+            services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -62,7 +69,7 @@ namespace BulgariaApp
 
             });
         }
-    
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
