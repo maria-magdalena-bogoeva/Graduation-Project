@@ -16,15 +16,17 @@ namespace BulgariaApp.Services
         {
             _context = context;
         }
-        public bool Create(string name, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount)
+        public bool Create(string name, DateTime startDate, DateTime endDate, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount)
         {
             Excursion excursion = new Excursion
             {
-                ExcurionName=name,
-                Description=description,
-                Picture=picture,
-                Attraction=_context.Attractions.Find(attractionId),
-                MaxVisitors=maxVisitors,
+                ExcurionName = name,
+                StartDate = startDate,
+                EndDate = endDate,
+                Description = description,
+                Picture = picture,
+                Attraction = _context.Attractions.Find(attractionId),
+                MaxVisitors = maxVisitors,
                 Price = price,
                 Discount = discount
             };
@@ -43,7 +45,7 @@ namespace BulgariaApp.Services
             return excursions;
         }
 
-      
+
 
         public List<Excursion> GetExcursions(string searchStringExcursionName, string searchPrice)
         {
@@ -51,7 +53,7 @@ namespace BulgariaApp.Services
             List<Excursion> excursions = _context.Excursions.ToList();
             if (!String.IsNullOrEmpty(searchStringExcursionName) && !String.IsNullOrEmpty(searchPrice))
             {
-                excursions = excursions.Where(x => x.ExcurionName.ToLower() 
+                excursions = excursions.Where(x => x.ExcurionName.ToLower()
                 == searchStringExcursionName.ToLower() && x.Price == decimal.Parse(searchPrice)).ToList();
 
             }
@@ -68,7 +70,7 @@ namespace BulgariaApp.Services
 
         }
 
-       
+
         public bool RemoveById(int excursionId)
         {
             var excursion = GetExcursionById(excursionId);
@@ -80,7 +82,7 @@ namespace BulgariaApp.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool Update(int excursionId, string name, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount)
+        public bool Update(int excursionId, string name, DateTime startDate, DateTime endDate, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount)
         {
             var excursion = GetExcursionById(excursionId);
             if (excursion == default(Excursion))
@@ -89,6 +91,8 @@ namespace BulgariaApp.Services
             }
 
             excursion.ExcurionName = name;
+            excursion.StartDate = startDate;
+            excursion.EndDate = endDate;
             excursion.Description = description;
             excursion.Picture = picture;
             excursion.AttractionId = attractionId;
@@ -99,6 +103,9 @@ namespace BulgariaApp.Services
 
 
             excursion.Attraction = _context.Attractions.Find(attractionId);
+            excursion.StartDate = startDate;
+            excursion.EndDate = endDate;
+            excursion.Description = description;
             excursion.Picture = picture;
             excursion.MaxVisitors = maxVisitors;
             excursion.Price = price;

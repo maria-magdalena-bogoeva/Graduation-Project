@@ -2,6 +2,7 @@
 using BulgariaApp.Entities;
 using BulgariaApp.Models.Attraction;
 using BulgariaApp.Models.Category;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace BulgariaApp.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class AttractionController : Controller
     {
         private readonly IAttractionService _attractionService;
@@ -21,6 +23,7 @@ namespace BulgariaApp.Controllers
             this._attractionService = attractionService;
             this._categoryService = categoryService;
         }
+        [AllowAnonymous]
         // GET: AttractionController
         public ActionResult Index(string searchStringCategoryName)
         {
@@ -39,6 +42,7 @@ namespace BulgariaApp.Controllers
             return this.View(attractions);
 
         }
+        [AllowAnonymous]
 
         // GET: AttractionController/Details/5
         public ActionResult Details(int id)
@@ -176,8 +180,6 @@ namespace BulgariaApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
-
-
         {
             var deleted = _attractionService.RemoveById(id);
 

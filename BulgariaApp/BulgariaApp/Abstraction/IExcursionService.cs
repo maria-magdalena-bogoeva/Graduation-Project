@@ -8,8 +8,8 @@ namespace BulgariaApp.Abstraction
 {
     public interface IExcursionService
     {
-        bool Create(string name, string description, string picture,int attractionId,int maxVisitors, decimal price, decimal discount);
-        bool Update(int excursionId, string name, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount);
+        bool Create(string name, DateTime startDate, DateTime endDate, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount);
+        bool Update(int excursionId, string name, DateTime startDate, DateTime endDate, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount);
 
         List<Excursion> GetExcursions();
 
@@ -17,6 +17,6 @@ namespace BulgariaApp.Abstraction
 
         bool RemoveById(int excursionId);
 
-        List<Excursion> GetExcursions(string searchStringExcursionName,string searchPrice);
+        List<Excursion> GetExcursions(string searchStringExcursionName, string searchPrice);
     }
 }

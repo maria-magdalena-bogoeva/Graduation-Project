@@ -10,9 +10,9 @@ namespace BulgariaApp.Models.Excursion
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name = "Excursion Name")]
+        [Display(Name = "ExcursionName")]
         public string ExcurionName { get; set; }
-        [Display(Name = "AtStart Date")]
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
@@ -25,11 +25,11 @@ namespace BulgariaApp.Models.Excursion
         public int AttractionId { get; set; }
 
 
-        [Display(Name="Attration")]
+        [Display(Name="Attraction")]
         public string AttractionName { get; set; }
 
 
-        [Display(Name = "Max visitors")]
+        [Display(Name = "Max Visitors")]
         public int MaxVisitors { get; set; }
 
 

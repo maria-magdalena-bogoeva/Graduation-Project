@@ -1,0 +1,111 @@
+﻿@model IEnumerable<BulgariaApp.Models.Excursion.ExcursionIndexVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+ }
+<form asp-controller="Excursion" asp-action="Index" method="get">
+    <p>
+        ExcursionName <input type="text" name="SearchStringExcursionName" />
+        Price <input type="text" name="SearchPrice" />
+        <input type="submit" value="Filter">
+    </p>
+
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ExcurionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.AttractionId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.AttractionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxVisitors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExcurionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Picture)*@
+                    <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.AttractionId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.AttractionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxVisitors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount) %
+                </td>
+                <td>
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
+
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit </a> } @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
+
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete </a>}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

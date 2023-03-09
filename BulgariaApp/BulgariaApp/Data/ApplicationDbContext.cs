@@ -26,6 +26,10 @@ namespace BulgariaApp.Data
         public DbSet<BulgariaApp.Models.Attraction.AttractionEditVM> AttractionEditVM { get; set; }
         public DbSet<BulgariaApp.Models.Attraction.AttractionDeleteVM> AttractionDeleteVM { get; set; }
         public DbSet<BulgariaApp.Models.Attraction.AttractionDetailsVM> AttractionDetailsVM { get; set; }
+        public DbSet<BulgariaApp.Models.Excursion.ExcursionIndexVM> ExcursionIndexVM { get; set; }
+        public DbSet<BulgariaApp.Models.Excursion.ExcursionEditVM> ExcursionEditVM { get; set; }
+        public DbSet<BulgariaApp.Models.Excursion.ExcursionDetailsVM> ExcursionDetailsVM { get; set; }
+        public DbSet<BulgariaApp.Models.Excursion.ExcursionDeleteVM> ExcursionDeleteVM { get; set; }
 
 
     }
