@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BulgariaApp.Models.Excursion.ExcursionIndexVM>
+﻿@using BulgariaApp.Models.Reservation
+@model IEnumerable<BulgariaApp.Models.Excursion.ExcursionIndexVM>
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +11,7 @@
     <p>
         <a asp-action="Create">Create New</a>
     </p>
- }
+}
 <form asp-controller="Excursion" asp-action="Index" method="get">
     <p>
         ExcursionName <input type="text" name="SearchStringExcursionName" />
@@ -38,8 +39,8 @@
                 @Html.DisplayNameFor(model => model.Picture)
             </th>
             @*<th>
-                    @Html.DisplayNameFor(model => model.AttractionId)
-                </th>*@
+            @Html.DisplayNameFor(model => model.AttractionId)
+        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.AttractionName)
             </th>
@@ -52,7 +53,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.Discount)
             </th>
-            <th></th>
+            </th>
+            @if (this.User.Identity.IsAuthenticated)
+            {
+                <th>
+                    Order
+                </th>
+}
         </tr>
     </thead>
     <tbody>
@@ -90,6 +97,15 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Discount) %
                 </td>
+                @if (this.User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
+                        {
+                            ExcursionId = item.Id
+                        })
+                    </td>
+                }
                 <td>
                     @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                     {

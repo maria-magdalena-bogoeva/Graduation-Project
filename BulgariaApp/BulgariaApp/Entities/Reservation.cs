@@ -12,7 +12,7 @@ namespace BulgariaApp.Entities
         public int Id { get; set; }
 
         [Required]
-        public DateTime ResercationDate { get; set; }
+        public DateTime ReservationDate { get; set; }
       
         [Required]
         public int ExcursionId { get; set; }

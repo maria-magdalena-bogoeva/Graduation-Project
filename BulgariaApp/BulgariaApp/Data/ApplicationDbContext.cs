@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using BulgariaApp.Models.Excursion;
 using BulgariaApp.Models.Attraction;
+using BulgariaApp.Models.Reservation;
 
 namespace BulgariaApp.Data
 {
@@ -30,6 +31,8 @@ namespace BulgariaApp.Data
         public DbSet<BulgariaApp.Models.Excursion.ExcursionEditVM> ExcursionEditVM { get; set; }
         public DbSet<BulgariaApp.Models.Excursion.ExcursionDetailsVM> ExcursionDetailsVM { get; set; }
         public DbSet<BulgariaApp.Models.Excursion.ExcursionDeleteVM> ExcursionDeleteVM { get; set; }
+        public DbSet<BulgariaApp.Models.Reservation.ReservationIndexVM> ReservationIndexVM { get; set; }
+        public DbSet<BulgariaApp.Models.Reservation.ReservationConfirmVM> ReservationConfirmVM { get; set; }
 
 
     }
