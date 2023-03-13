@@ -1,17 +1,15 @@
 ﻿@model IEnumerable<BulgariaApp.Models.Reservation.ReservationIndexVM>
 
 @{
-    ViewData["Title"] = "MyOrders";
+    ViewData["Title"] = "MyReservations";
 }
 
-<h1>MyOrders</h1>
+<h1>MyReservations</h1>
 
 <p>
-    <a asp-controller="Excursion" asp-action="Index">Back to Products</a>
+    <a asp-controller="Excursion" asp-action="Index">Back to Excursions</a>
 </p>
-@*<p>
-        <a asp-action="Create">Create New</a>
-    </p>*@
+
 <form asp-controller="Reservation" asp-action="MyReservations" method="get">
     <p>
         Excursion name: <input type="text" name="SearchString" />

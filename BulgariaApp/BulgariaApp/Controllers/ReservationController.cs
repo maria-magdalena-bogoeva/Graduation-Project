@@ -1,6 +1,7 @@
 ﻿using BulgariaApp.Data;
 using BulgariaApp.Entities;
 using BulgariaApp.Models.Reservation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace BulgariaApp.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ReservationController : Controller
     {
         public readonly ApplicationDbContext context;
@@ -25,8 +27,7 @@ namespace BulgariaApp.Controllers
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = context.Users.SingleOrDefault(u => u.Id == userId);
-            List<ReservationIndexVM> reservations = context
-                .Reservations
+            List<ReservationIndexVM> reservations = context.Reservations
                 .Select(x => new ReservationIndexVM
                 {
                     Id = x.Id,
@@ -34,6 +35,8 @@ namespace BulgariaApp.Controllers
                     UserId = x.UserId,
                     User = x.User.UserName,
                     ExcursionId = x.ExcursionId,
+                    Excursion = x.Excursion.ExcurionName,
+                    Picture = x.Excursion.Picture,
                     Quantity = x.Quantity,
                     Price = x.Price,
                     Discount = x.Discount,
@@ -42,6 +45,7 @@ namespace BulgariaApp.Controllers
                 }).ToList();
             return View(reservations);
         }
+        [AllowAnonymous]
         public IActionResult MyReservations(string searchString)
         {
             string currentUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -57,23 +61,24 @@ namespace BulgariaApp.Controllers
                 UserId = x.UserId,
                 User = x.User.UserName,
                 ExcursionId = x.ExcursionId,
+                Excursion = x.Excursion.ExcurionName,
+                Picture = x.Excursion.Picture,
                 Quantity = x.Quantity,
                 Price = x.Price,
                 Discount = x.Discount,
                 TotalPrice = x.TotalPrice,
+                
             }).ToList();
-
             if (!String.IsNullOrEmpty(searchString))
             {
-                reservations = reservations.Where(o => o.Excursion.ToLower().Contains(searchString.ToLower())).ToList();
+                reservations = reservations.Where(r => r.Excursion.ToLower().Contains(searchString.ToLower())).ToList();
             }
+
+
             return this.View(reservations);
         }
-        // GET: ReservationController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+
+        [AllowAnonymous]
 
         // GET: ReservationController/Create
         public ActionResult Create(int excursionId, int quantity)
@@ -105,6 +110,7 @@ namespace BulgariaApp.Controllers
         // POST: ReservationController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create(ReservationConfirmVM bindingModel)
         {
             if (this.ModelState.IsValid)
@@ -114,68 +120,28 @@ namespace BulgariaApp.Controllers
                 var excursion = this.context.Excursions.SingleOrDefault(x => x.Id == bindingModel.ExcursionId);
                 if (user == null || excursion == null || excursion.MaxVisitors < bindingModel.Quantity || bindingModel.Quantity == 0)
                 {
-                    return this.RedirectToAction("Index", "Product");
+                    return this.RedirectToAction("Index", "Excursion");
                 }
                 Reservation reservationFromDb = new Reservation
                 {
                     ReservationDate = DateTime.UtcNow,
-                    UserId = userId,
                     ExcursionId = bindingModel.ExcursionId,
+                    UserId = userId,
                     Quantity = bindingModel.Quantity,
                     Price = excursion.Price,
                     Discount = excursion.Discount,
-                    
+
                 };
 
                 excursion.MaxVisitors -= bindingModel.Quantity;
 
                 this.context.Excursions.Update(excursion);
-                this.context.Reservations.Add(reservationFromDb);
+               this.context.Reservations.Add(reservationFromDb);
                 this.context.SaveChanges();
             }
             return this.RedirectToAction("Index", "Excursion");
         }
 
-        // GET: ReservationController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: ReservationController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ReservationController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ReservationController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
