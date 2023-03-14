@@ -53,9 +53,9 @@ namespace BulgariaApp
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IExcursionService, ExcursionService>();
-
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IAttractionService, AttractionService>();
+            services.AddTransient<IStatisticsService, StatisticsService>();
 
             services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
