@@ -11,8 +11,16 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            
+           
+            <a class="navbar-brand" href="#">
+
+                <!-- Add logo with size of 90*80 -->
+                <img src="~/img/bglogo.png"
+                     width="80" height="80" alt="">
+            </a>
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgaria</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgariaful</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,6 +36,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Excursion" asp-action="Index">Excursions</a>
                         </li>
+                        <li class="nav-item active">
+                            <div class="dropdown show">
+                                <a class="nav-link active dropdown-toggle" href="#"
+                                   id="dropdownMenuLink" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    Excursions
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkCategories">
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=decoration&SearchStringDesignerName=">Decorations</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=paintings&SearchStringDesignerName=">Paintings</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=scandinavian+moss&SearchStringDesignerName=">Scandinavian Moss</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=key+house&SearchStringDesignerName=">Key houses</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=calendar&SearchStringDesignerName=">Calendars</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=albums&SearchStringDesignerName=">Albums</a>
+                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=cards&SearchStringDesignerName=">Cards</a>
+                                </div>
+                            </div>
+                        </li>
+                        @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Client")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="MyReservations">My Reservations</a>
+                            </li>
+                        }
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                         {
                             <li class="nav-item active">
@@ -54,7 +86,7 @@
             </div>
         </nav>
     </header>
-    <div class="container body-container ">
+    <div class="container-fluid @*body-container*@ ">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

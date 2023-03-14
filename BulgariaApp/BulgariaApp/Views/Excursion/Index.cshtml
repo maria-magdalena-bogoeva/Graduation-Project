@@ -32,9 +32,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.EndDate)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Picture)
             </th>
@@ -65,63 +65,66 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExcurionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>*@
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Picture)*@
+                <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.AttractionId)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.AttractionName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Attraction.AttractionId.Category)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxVisitors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount) %
+            </td>
+            @if (this.User.Identity.IsAuthenticated)
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.ExcurionName)
+                    @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
+                    {
+                        ExcursionId = item.Id
+                    })
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.Picture)*@
-                    <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.AttractionId)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.AttractionName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaxVisitors)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Discount) %
-                </td>
-                @if (this.User.Identity.IsAuthenticated)
+            }
+            <td>
+                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                 {
-                    <td>
-                        @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
-                        {
-                            ExcursionId = item.Id
-                        })
-                    </td>
+
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit </a>
                 }
-                <td>
-                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                    {
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                {
 
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit </a>
-                    }
-                    @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
-                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                    {
-
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete </a>
-                    }
-                </td>
-            </tr>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete </a>
+                }
+            </td>
+        </tr>
         }
     </tbody>
 </table>
