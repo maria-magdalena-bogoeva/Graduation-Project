@@ -12,8 +12,7 @@ namespace BulgariaApp.Models.Reservation
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
-        [Required]
-        public string ReservationDate { get; set; }
+       
 
         public string UserId { get; set; }
         public string User { get; set; }
