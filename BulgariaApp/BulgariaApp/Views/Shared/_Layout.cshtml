@@ -10,17 +10,10 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            
-           
-            <a class="navbar-brand" href="#">
-
-                <!-- Add logo with size of 90*80 -->
-                <img src="~/img/bglogo.png"
-                     width="80" height="80" alt="">
-            </a>
+        <nav @*id="navbar_top"*@  class="fixed-top h5 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <img src="~/img/bglogo.png" width="80" height="80" alt="">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgariaful</a>
+                <a style="font-size:30px" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgariaful</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,13 +37,10 @@
                                     Excursions
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkCategories">
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=decoration&SearchStringDesignerName=">Decorations</a>
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=paintings&SearchStringDesignerName=">Paintings</a>
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=scandinavian+moss&SearchStringDesignerName=">Scandinavian Moss</a>
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=key+house&SearchStringDesignerName=">Key houses</a>
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=calendar&SearchStringDesignerName=">Calendars</a>
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=albums&SearchStringDesignerName=">Albums</a>
-                                    <a class="dropdown-item" href="/Product/Index?SearchStringCategoryName=cards&SearchStringDesignerName=">Cards</a>
+                                    <a class="dropdown-item" href="">sth</a>
+                                    <a class="dropdown-item" href="">sth</a>
+                                    <a class="dropdown-item" href="">sth</a>
+
                                 </div>
                             </div>
                         </li>
@@ -93,13 +83,42 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        @*<div class="container">*@
+            <!--<div class="row">
+                <div class="col-xs-12 col-md-12" style="height:400px;background-color:black">
+                    <div style="height: 250px;">
+                        <div class="float-left text-center text-white  h-75" style="background-color:purple;width:50%">
+                            CONTACT US
+                        </div>
+                        <div class="float-right  h-75" style="background-color: red; width: 50%">
+                            hjhklljkjkljkl
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 h-25 text-center pb-3" style="background-color:green">Map</div>
+                </div>-->
+            @*</div>*@
             &copy; 2023 - BulgariaApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+        <!--</div>-->
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+   @*<script>
+       document.addEventListener("DOMContentLoaded", function () {
+           window.addEventListener('scroll', function () {
+               if (window.scrollY > 50) {
+                   document.getElementById('navbar_top').classList.add('fixed-top');
+                   // add padding top to show content behind navbar
+                   navbar_height = document.querySelector('.navbar').offsetHeight;
+                   document.body.style.paddingTop = navbar_height + 'px';
+               } else {
+                   document.getElementById('navbar_top').classList.remove('fixed-top');
+                   // remove padding top from body
+                   document.body.style.paddingTop = '0';
+               }
+           });
+       });*@
+   </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
