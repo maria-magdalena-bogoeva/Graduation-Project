@@ -1,5 +1,6 @@
 ﻿using BulgariaApp.Abstraction;
 using BulgariaApp.Models.Statistics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace BulgariaApp.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class StatisticsController : Controller
     {
         private readonly IStatisticsService _statisticsService;

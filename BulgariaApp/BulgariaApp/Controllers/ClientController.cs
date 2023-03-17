@@ -1,5 +1,6 @@
 ﻿using BulgariaApp.Entities;
 using BulgariaApp.Models.Client;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace BulgariaApp.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ClientController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;

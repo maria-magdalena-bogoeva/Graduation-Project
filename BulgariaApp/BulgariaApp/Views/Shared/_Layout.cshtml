@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav @*id="navbar_top"*@  class="fixed-top h5 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav id="navbar_top"  class="@*fixed-top*@ h5 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <img src="~/img/bglogo.png" width="80" height="80" alt="">
             <div class="container">
                 <a style="font-size:30px" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgariaful</a>
@@ -82,7 +82,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mt-5">
         @*<div class="container">*@
             <!--<div class="row">
                 <div class="col-xs-12 col-md-12" style="height:400px;background-color:black">
@@ -103,7 +103,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-   @*<script>
+   <script>
        document.addEventListener("DOMContentLoaded", function () {
            window.addEventListener('scroll', function () {
                if (window.scrollY > 50) {
@@ -117,7 +117,7 @@
                    document.body.style.paddingTop = '0';
                }
            });
-       });*@
+       });
    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
