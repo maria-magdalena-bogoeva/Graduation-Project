@@ -4,9 +4,24 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
 
-<div class="row">
+<link href="~/css/log.css" rel="stylesheet" />
+
+
+
+
+
+<div class="sidenav mt-2">
+    <div class="login-main-text">
+        <h2>Application<br> Register Page</h2>
+        <p>Login or register from here to access.</p>
+    </div>
+</div>
+
+
+
+
+<div class="row ">
     <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h4>Create a new account.</h4>
@@ -50,7 +65,7 @@
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    @*<div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to register.</h4>
             <hr />
@@ -78,7 +93,7 @@
                     </form>
                 }
             }
-        </section>
+        </section>*@
     </div>
 </div>
 

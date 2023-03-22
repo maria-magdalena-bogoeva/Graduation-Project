@@ -6,12 +6,12 @@
     <title>@ViewData["Title"] - BulgariaApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-   
+
 </head>
 <body>
     <header>
-        <nav id="navbar_top"  class="@*fixed-top*@ h5 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <img src="~/img/bglogo.png" width="80" height="80" alt="">
+        <nav id="navbar_top" class="@*fixed-top*@ h5 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <img src="~/img/bglogo.png" width="80" height="80" alt="">
             <div class="container">
                 <a style="font-size:30px" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgariaful</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -77,35 +77,94 @@
         </nav>
     </header>
     <div class="container-fluid @*body-container*@ ">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 pt-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted mt-5">
-       
-            &copy; 2023 - BulgariaApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted @*fixed-bottom*@ mt-5">
+        <div class="row">
+            <div class="col-xs-12 col-md-12" >
+                <div style="height: 850px;">
+                    <div class="float-left text-center text-white  h-50" style="background-color:purple;width:50%">
+                        <h3 class="text-center pt-3">Contact Us</h3>
+
+                        <p >
+                            We'd love to hear from you! If you have any questions or
+                            feedback about our website, please feel free
+                        </p> 
+                        <p style="line-height:0px">
+                            to reach out
+                            to us via email, phone, or social media.
+
+                        </p>
+
+
+                        <h5 class=" pt-3">Email</h5>
+
+                        <p >
+                            If you prefer to contact us via email,
+                            please send a message to <a href="https://www.abv.bg/">magi044@abv.bg</a>
+                        </p>
+
+                        <h5 class="pt-3">Phone</h5>
+
+                        <p >
+                            If you'd like to speak with someone over the phone
+                            ,
+                        </p> 
+                        <p style="line-height:1px">
+                            please call <a href="">+359 89 900 2717</a> during our
+                            business hours <a href="">10am-6pm</a>.
+                        </p>
+                        
+
+                        <h5 class=" pt-3">Social Media</h5>
+
+                        <p >
+                            You can also contact us via social media.
+                            Follow us on <a href="https://www.facebook.com/">Facebook</a>
+                        </p>
+                        <p  style="line-height:1px">
+                            and send us a direct message or tag us in a
+                            post
+                        </p>
+                        
+
+                        <p class="pt-4 font-weight-bolder font-italic">
+                            Thank you for reaching out to us! We will
+                            respond to your message as soon as possible.
+                        </p>
+
+                    </div>
+                    <div class="float-right pl-3 h-50" style="width: 50%">
+                        <iframe class="text-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.550632172058!2d23.030714315752338!3d42.60727677917107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aacac3bbc30045%3A0x1282864432d70ccb!2z0J_QnNCTICLQpdGA0LjRgdGC0L4g0KHQvNC40YDQvdC10L3RgdC60Lgi!5e0!3m2!1sbg!2sbg!4v1679467327668!5m2!1sbg!2sbg" style="width:100%;height:100%;border:0;"   @*style=""*@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*&copy; 2023 - BulgariaApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
         <!--</div>-->
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-   <script>
-       document.addEventListener("DOMContentLoaded", function () {
-           window.addEventListener('scroll', function () {
-               if (window.scrollY > 50) {
-                   document.getElementById('navbar_top').classList.add('fixed-top');
-                   // add padding top to show content behind navbar
-                   navbar_height = document.querySelector('.navbar').offsetHeight;
-                   document.body.style.paddingTop = navbar_height + 'px';
-               } else {
-                   document.getElementById('navbar_top').classList.remove('fixed-top');
-                   // remove padding top from body
-                   document.body.style.paddingTop = '0';
-               }
-           });
-       });
-   </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    document.getElementById('navbar_top').classList.add('fixed-top');
+                    // add padding top to show content behind navbar
+                    navbar_height = document.querySelector('.navbar').offsetHeight;
+                    document.body.style.paddingTop = navbar_height + 'px';
+                } else {
+                    document.getElementById('navbar_top').classList.remove('fixed-top');
+                    // remove padding top from body
+                    document.body.style.paddingTop = '0';
+                }
+            });
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

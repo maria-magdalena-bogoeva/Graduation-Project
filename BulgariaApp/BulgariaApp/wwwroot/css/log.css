@@ -1,0 +1,39 @@
+﻿body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head {
+    height: 150px;
+    background: #FFF;
+}
+
+.sidenav {
+    height: 200px;
+    background-color: #000;
+    overflow-x: hidden;
+    /* padding-top: 20px;*/
+}
+
+
+.main {
+    padding: 0px 10px;
+}
+
+
+
+.login-main-text {
+    /*margin-top: 20%;*/
+    padding: 37px;
+    color: #fff;
+}
+
+    .login-main-text h2 {
+        font-weight: 300;
+    }
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff;
+}

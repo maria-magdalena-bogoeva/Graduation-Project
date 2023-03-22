@@ -72,11 +72,14 @@ body {
     min-height: 100%;*/
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+    position:relative;
+ /* position: absolute;*/
+  bottom: 50px;
+  width: 99%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  /*line-height: 60px;*/ /* Vertically center the text there */
+  height:850px;
+  
 }
 .body-container {
     /*remove the container default padding attribute*/
