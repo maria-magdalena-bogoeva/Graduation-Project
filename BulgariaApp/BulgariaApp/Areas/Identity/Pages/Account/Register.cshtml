@@ -10,8 +10,7 @@
 
 
 
-
-<div class="sidenav mt-2">
+<div class="sidenav mt-1">
     <div class="login-main-text">
         <h2>Application<br> Register Page</h2>
         <p>Login or register from here to access.</p>
@@ -21,10 +20,10 @@
 
 
 
-<div class="row ">
-    <div class="col-md-4">
+<div class="row mt-3 mb-5">
+    <div class="@*col-md-4*@ pl-4 ml-3 pb-3 float-left" style="border: solid 2px #36454F;width:49%" >
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
+            <h4 class="pt-3 font-weight-bold">Create a new account</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
@@ -62,8 +61,17 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="button  btn-black " style="border-radius:90px">Register</button>
         </form>
+    </div>
+    <div class="@*col-xs-6 col-md-6*@ float-right pt-5" style="border: solid 2px black; background-color: gray; width: 49% ">
+        <div class="center text-white">
+            <h1 style="padding-top:100px">Already have an account?</h1>
+            <p>Sign in now</p>
+
+            <button class="button btn-black ghost " onclick="window.location.href='/Identity/Account/Login'">Sign in</button>
+        </div>
+
     </div>
     @*<div class="col-md-6 col-md-offset-2">
         <section>
@@ -94,8 +102,8 @@
                 }
             }
         </section>*@
-    </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

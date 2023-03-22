@@ -9,7 +9,8 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
+    /* color:rgb(0 0 0);*/
 }
 
 .btn-primary {
@@ -71,15 +72,23 @@ body {
     width: 100%;
     min-height: 100%;*/
 }
-.footer {
-    position:relative;
- /* position: absolute;*/
-  bottom: 50px;
+/*.footer {*/
+    /*position:relative;*/
+  /*position: absolute;
+  bottom: 0px;
   width: 99%;
   white-space: nowrap;
+  height:auto;*/
   /*line-height: 60px;*/ /* Vertically center the text there */
-  height:850px;
   
+  
+/*}*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
 }
 .body-container {
     /*remove the container default padding attribute*/

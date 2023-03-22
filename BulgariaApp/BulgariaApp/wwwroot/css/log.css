@@ -37,3 +37,10 @@
     background-color: #000 !important;
     color: #fff;
 }
+button:hover {
+    color: gray;
+}
+.divdiv {
+    overflow: hidden;
+    margin-bottom: 50px;
+}
