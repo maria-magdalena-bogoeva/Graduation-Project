@@ -16,7 +16,7 @@ namespace BulgariaApp.Services
         {
             _context = context;
         }
-        public bool Create(string name, DateTime startDate, DateTime endDate, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount)
+        public bool Create(string name, DateTime startDate, DateTime endDate, string description, string picture, string picture1, string picture2, string picture3, string picture4, int attractionId, int maxVisitors, decimal price, decimal discount)
         {
             Excursion excursion = new Excursion
             {
@@ -25,6 +25,10 @@ namespace BulgariaApp.Services
                 EndDate = endDate,
                 Description = description,
                 Picture = picture,
+                Picture1 = picture1,
+                Picture2= picture2,
+                Picture3 = picture3,
+                Picture4 = picture4,
                 Attraction = _context.Attractions.Find(attractionId),
                 MaxVisitors = maxVisitors,
                 Price = price,
@@ -82,7 +86,7 @@ namespace BulgariaApp.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool Update(int excursionId, string name, DateTime startDate, DateTime endDate, string description, string picture, int attractionId, int maxVisitors, decimal price, decimal discount)
+        public bool Update(int excursionId, string name, DateTime startDate, DateTime endDate, string description, string picture, string picture1, string picture2, string picture3, string picture4, int attractionId, int maxVisitors, decimal price, decimal discount)
         {
             var excursion = GetExcursionById(excursionId);
             if (excursion == default(Excursion))
@@ -95,6 +99,10 @@ namespace BulgariaApp.Services
             excursion.EndDate = endDate;
             excursion.Description = description;
             excursion.Picture = picture;
+            excursion.Picture1 = picture1;
+            excursion.Picture2 = picture2;
+            excursion.Picture3 = picture3;
+            excursion.Picture4 = picture4;
             excursion.AttractionId = attractionId;
             excursion.MaxVisitors = maxVisitors;
             excursion.Price = price;
@@ -107,6 +115,10 @@ namespace BulgariaApp.Services
             excursion.EndDate = endDate;
             excursion.Description = description;
             excursion.Picture = picture;
+            excursion.Picture1 = picture1;
+            excursion.Picture2 = picture2;
+            excursion.Picture3 = picture3;
+            excursion.Picture4 = picture4;
             excursion.MaxVisitors = maxVisitors;
             excursion.Price = price;
             excursion.Discount = discount;

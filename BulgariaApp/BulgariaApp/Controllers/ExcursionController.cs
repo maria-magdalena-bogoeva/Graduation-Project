@@ -37,6 +37,10 @@ namespace BulgariaApp.Controllers
                 EndDate = excursion.EndDate,
                 Description = excursion.Description,
                 Picture = excursion.Picture,
+                Picture1 = excursion.Picture1,
+                Picture2 = excursion.Picture2,
+                Picture3 = excursion.Picture3,
+                Picture4 = excursion.Picture4,
                 AttractionId = excursion.AttractionId,
                 AttractionName = excursion.Attraction.AttractionName,
                 MaxVisitors = excursion.MaxVisitors,
@@ -64,6 +68,10 @@ namespace BulgariaApp.Controllers
                 EndDate = item.EndDate,
                 Description = item.Description,
                 Picture = item.Picture,
+                Picture1 = item.Picture1,
+                Picture2 = item.Picture2,
+                Picture3 = item.Picture3,
+                Picture4 = item.Picture4,
                 AttractionId = item.AttractionId,
                 AttractionName = item.Attraction.AttractionName,
                 MaxVisitors = item.MaxVisitors,
@@ -116,7 +124,7 @@ namespace BulgariaApp.Controllers
             if (ModelState.IsValid)
             {
                 var createdId = _excursionService.Create(excursion.ExcurionName, excursion.StartDate, excursion.EndDate, excursion.Description,
-                   excursion.Picture, excursion.AttractionId,
+                   excursion.Picture, excursion.Picture1, excursion.Picture2, excursion.Picture3, excursion.Picture4, excursion.AttractionId,
                    excursion.MaxVisitors, excursion.Price, excursion.Discount);
                 if (createdId)
                 {
@@ -143,6 +151,10 @@ namespace BulgariaApp.Controllers
                 EndDate = excursion.EndDate,
                 Description = excursion.Description,
                 Picture = excursion.Picture,
+                Picture1 = excursion.Picture1,
+                Picture2 = excursion.Picture2,
+                Picture3 = excursion.Picture3,
+                Picture4 = excursion.Picture4,
                 AttractionId = excursion.AttractionId,
                 MaxVisitors = excursion.MaxVisitors,
                 Price = excursion.Price,
@@ -169,7 +181,7 @@ namespace BulgariaApp.Controllers
             if (ModelState.IsValid)
             {
                 var updated = _excursionService.Update(id,excursion.ExcurionName, excursion.StartDate, excursion.EndDate, excursion.Description,
-                   excursion.Picture, excursion.AttractionId,
+                   excursion.Picture, excursion.Picture1, excursion.Picture2, excursion.Picture3, excursion.Picture4, excursion.AttractionId,
                    excursion.MaxVisitors, excursion.Price, excursion.Discount);
                 if (updated)
                 {
@@ -196,6 +208,10 @@ namespace BulgariaApp.Controllers
                 EndDate = item.EndDate,
                 Description = item.Description,
                 Picture = item.Picture,
+                Picture1 = item.Picture1,
+                Picture2 = item.Picture2,
+                Picture3 = item.Picture3,
+                Picture4 = item.Picture4,
                 AttractionId = item.AttractionId,
                 AttractionName = item.Attraction.AttractionName,
                 MaxVisitors = item.MaxVisitors,
