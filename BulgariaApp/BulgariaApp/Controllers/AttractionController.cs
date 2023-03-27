@@ -35,8 +35,12 @@ namespace BulgariaApp.Controllers
                 CategoryId = attraction.CategoryId,
                 CategoryName = attraction.Category.CategoryName,
                 Picture = attraction.Picture,
+                Picture1 = attraction.Picture1,
+                Picture2 = attraction.Picture2,
+                Picture3 = attraction.Picture3,
+                Picture4 = attraction.Picture4,
                 Description = attraction.Description
-               
+
 
             }).ToList();
             return this.View(attractions);
@@ -59,9 +63,13 @@ namespace BulgariaApp.Controllers
                 CategoryId = item.CategoryId,
                 CategoryName = item.Category.CategoryName,
                 Picture = item.Picture,
+                Picture1 = item.Picture1,
+                Picture2 = item.Picture2,
+                Picture3 = item.Picture3,
+                Picture4 = item.Picture4,
                 Description = item.Description
 
-              
+
             };
             return View(attraction);
         }
@@ -69,7 +77,7 @@ namespace BulgariaApp.Controllers
         public ActionResult Create()
         {
             var attraction = new AttractionCreateVM();
-           
+
             attraction.Categories = _categoryService.GetCategories()
                .Select(x => new CategoryPairVM()
                {
@@ -86,8 +94,10 @@ namespace BulgariaApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var createdId = _attractionService.Create(attraction.AttractionName, 
-                                                        attraction.Picture,
+                var createdId = _attractionService.Create(attraction.AttractionName,
+                                                        attraction.Picture, attraction.Picture1,
+                                                        attraction.Picture2,
+                                                        attraction.Picture3, attraction.Picture4,
                                                        attraction.Description, attraction.CategoryId);
                 if (createdId)
                 {
@@ -112,15 +122,19 @@ namespace BulgariaApp.Controllers
             {
                 Id = attraction.Id,
                 AttractionName = attraction.AttractionName,
-                
+
                 CategoryId = attraction.CategoryId,
                 // CategoryName = product.Category.CategoryName,
                 Picture = attraction.Picture,
+                Picture1 = attraction.Picture1,
+                Picture2 = attraction.Picture2,
+                Picture3 = attraction.Picture3,
+                Picture4 = attraction.Picture4,
                 Description = attraction.Description
 
-              
+
             };
-           
+
 
             updatedAttraction.Categories = _categoryService.GetCategories()
                .Select(c => new CategoryPairVM()
@@ -141,7 +155,9 @@ namespace BulgariaApp.Controllers
                 if (ModelState.IsValid)
                 {
                     var updated = _attractionService.Update(id, attraction.AttractionName,
-                                                        attraction.Picture,
+                                                        attraction.Picture, attraction.Picture1,
+                                                        attraction.Picture2,
+                                                        attraction.Picture3, attraction.Picture4,
                                                        attraction.Description, attraction.CategoryId);
                     if (updated)
                     {
@@ -169,9 +185,12 @@ namespace BulgariaApp.Controllers
                 CategoryId = item.CategoryId,
                 CategoryName = item.Category.CategoryName,
                 Picture = item.Picture,
-                Description = item.Description
-                ,
-             
+                Picture1 = item.Picture1,
+                Picture2 = item.Picture2,
+                Picture3 = item.Picture3,
+                Picture4 = item.Picture4,
+                Description = item.Description,
+
             };
             return View(attraction);
         }

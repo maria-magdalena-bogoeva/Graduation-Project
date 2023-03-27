@@ -15,13 +15,17 @@ namespace BulgariaApp.Services
         {
             _context = context;
         }
-        public bool Create(string name, string picture, string description, int categoryId)
+        public bool Create(string name, string picture, string picture1, string picture2, string picture3, string picture4, string description, int categoryId)
         {
             Attraction attraction = new Attraction
             {
                 AttractionName = name,
                 Description = description,
                 Picture = picture,
+                Picture1 = picture1,
+                Picture2 = picture2,
+                Picture3 = picture3,
+                Picture4 = picture4,
                 Category = _context.Categories.Find(categoryId),
               
             };
@@ -64,7 +68,7 @@ namespace BulgariaApp.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool Update(int attractionId, string name, string picture, string description, int categoryId)
+        public bool Update(int attractionId, string name, string picture, string picture1, string picture2, string picture3, string picture4, string description, int categoryId)
         {
             var attraction = GetAttractionById(attractionId);
             if (attraction == default(Attraction))
@@ -74,11 +78,19 @@ namespace BulgariaApp.Services
 
             attraction.AttractionName = name;
             attraction.Picture = picture;
+            attraction.Picture1 = picture1;
+            attraction.Picture2 = picture2;
+            attraction.Picture3 = picture3;
+            attraction.Picture4 = picture4;
             attraction.Description = description;
 
 
             attraction.Category = _context.Categories.Find(categoryId);
             attraction.Picture = picture;
+            attraction.Picture1 = picture1;
+             attraction.Picture2 = picture2;
+            attraction.Picture3 = picture3;
+            attraction.Picture4 = picture4;
             attraction.Description = description;
 
 

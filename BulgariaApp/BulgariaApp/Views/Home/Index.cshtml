@@ -11,18 +11,41 @@
     <link href="~/css/home.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-@** {
-	margin: 0;
-	padding: 0;
-}*@
+
 
 
 <body>
 
-    <div class="containerSlide">
-        <video autoplay="" class="box1" id="box1" src="/video.mp4"></video>
-        <video autoplay="" class="box2" id="box2" src="5.mp4"></video>
-        <video autoplay="" class="box3" id="box3" src="6.mp4"></video>
+    @*<div class="containerSlide">
+        <video autoplay="" class="box1" id="box1" src="/clips/video.mp4"></video>
+        <video autoplay="" class="box2" id="box2" src="/clips/sea.mp4"></video>
+        <video autoplay="" class="box3" id="box3" src="/clips/ndk.mp4"></video>
+    </div>*@
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner containerSlide">
+            <div class="carousel-item active">
+                <video @*autoplay="autoplay"*@ @*controls*@ autoplay muted preload="auto" class="box1" id="box1" src="/clips/video.mp4"></video>
+            </div>
+            <div class="carousel-item">
+                <video @*autoplay="autoplay"*@ @*controls*@ autoplay muted preload="auto" class="box2" id="box2" src="/clips/sea.mp4"></video>
+            </div>
+            <div class="carousel-item">
+                <video @*autoplay="autoplay"*@ @*controls*@ autoplay muted preload="auto" class="box3" id="box3" src="/clips/ndk.mp4"></video>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
     <script>
 
@@ -30,12 +53,8 @@
         var box1 = document.getElementById('box1');
         var box2 = document.getElementById('box2');
         var box3 = document.getElementById('box3');
-
-        box1.onended = function () {
-            box2.play();
-            box1.style.opacity = 0;
-            box2.style.opacity = 1;
-        }
+       
+       
         box2.onended = function () {
             box3.play();
             box2.style.opacity = 0;
@@ -45,6 +64,16 @@
             box1.play();
             box3.style.opacity = 0;
             box1.style.opacity = 1;
+        }
+        box3.onended = function () {
+            box1.play();
+            box3.style.opacity = 0;
+            box1.style.opacity = 1;
+        }
+        box1.onended = function () {
+            box2.play();
+            box1.style.opacity = 0;
+            box2.style.opacity = 1;
         }
 
     </script>

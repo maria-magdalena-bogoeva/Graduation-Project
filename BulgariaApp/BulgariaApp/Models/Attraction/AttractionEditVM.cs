@@ -21,6 +21,10 @@ namespace BulgariaApp.Models.Attraction
         public string Description { get; set; }
 
         public string Picture { get; set; }
+        public string Picture1 { get; set; }
+        public string Picture2 { get; set; }
+        public string Picture3 { get; set; }
+        public string Picture4 { get; set; }
 
 
         public int CategoryId { get; set; }

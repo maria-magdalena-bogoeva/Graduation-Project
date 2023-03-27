@@ -8,8 +8,8 @@ namespace BulgariaApp.Abstraction
 {
    public interface IAttractionService
     {
-        bool Create(string name, string picture, string description, int categoryId);
-        bool Update(int attractionId, string name, string picture, string description, int categoryId);
+        bool Create(string name, string picture, string picture1, string picture2, string picture3, string picture4, string description, int categoryId);
+        bool Update(int attractionId, string name, string picture, string picture1, string picture2, string picture3, string picture4, string description, int categoryId);
       
         List<Attraction> GetAttractions();
         Attraction GetAttractionById(int attractionId);

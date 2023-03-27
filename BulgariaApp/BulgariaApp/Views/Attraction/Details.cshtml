@@ -25,16 +25,39 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Picture)
         </dt>
-        <dd class="col-sm-10">
+        <dd class = "col-sm-10">
             <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
-            @*@Html.DisplayFor(model => model.Picture)*@
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Picture1)
+        </dt>
+        <dd class = "col-sm-10">
+            <img src="@Html.DisplayFor(model => model.Picture1)" alt="Image" width="100" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Picture2)
+        </dt>
+        <dd class = "col-sm-10">
+            <img src="@Html.DisplayFor(model => model.Picture2)" alt="Image" width="100" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Picture3)
+        </dt>
+        <dd class = "col-sm-10">
+            <img src="@Html.DisplayFor(model => model.Picture3)" alt="Image" width="100" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Picture4)
+        </dt>
+        <dd class="col-sm-10">
+            <iframe src="@Html.DisplayFor(model => model.Picture4)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </dd>
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryId)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CategoryId)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryName)
         </dt>
