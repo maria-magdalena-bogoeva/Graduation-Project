@@ -51,14 +51,15 @@ namespace BulgariaApp.Services
 
 
 
-        public List<Excursion> GetExcursions(string searchStringExcursionName, string searchPrice)
+        public List<Excursion> GetExcursions(string searchStringExcursionName, string searchPrice,string searchDiscount)
         {
 
             List<Excursion> excursions = _context.Excursions.ToList();
-            if (!String.IsNullOrEmpty(searchStringExcursionName) && !String.IsNullOrEmpty(searchPrice))
+            if (!String.IsNullOrEmpty(searchStringExcursionName) && !String.IsNullOrEmpty(searchPrice) && !String.IsNullOrEmpty(searchDiscount))
             {
                 excursions = excursions.Where(x => x.ExcurionName.ToLower()
-                == searchStringExcursionName.ToLower() && x.Price == decimal.Parse(searchPrice)).ToList();
+                == searchStringExcursionName.ToLower() && x.Price == decimal.Parse(searchPrice)
+                && x.Discount == decimal.Parse(searchDiscount)).ToList();
 
             }
             else if (!String.IsNullOrEmpty(searchStringExcursionName))
@@ -68,6 +69,10 @@ namespace BulgariaApp.Services
             else if (!String.IsNullOrEmpty(searchPrice))
             {
                 excursions = excursions.Where(x => x.Price == decimal.Parse(searchPrice)).ToList();
+            }
+            else if (!String.IsNullOrEmpty(searchDiscount))
+            {
+                excursions = excursions.Where(x => x.Discount == decimal.Parse(searchDiscount)).ToList();
             }
 
             return excursions;

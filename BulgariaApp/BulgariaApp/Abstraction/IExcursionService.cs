@@ -17,6 +17,6 @@ namespace BulgariaApp.Abstraction
 
         bool RemoveById(int excursionId);
 
-        List<Excursion> GetExcursions(string searchStringExcursionName, string searchPrice);
+        List<Excursion> GetExcursions(string searchStringExcursionName, string searchPrice, string searchDiscount);
     }
 }

@@ -26,9 +26,9 @@ namespace BulgariaApp.Controllers
 
         }
         [AllowAnonymous]
-        public ActionResult Index(string searchStringExcursionName, string searchPrice)
+        public ActionResult Index(string searchStringExcursionName, string searchPrice,string searchDiscount)
         {
-            List<ExcursionIndexVM> excursions = _excursionService.GetExcursions(searchStringExcursionName, searchPrice)
+            List<ExcursionIndexVM> excursions = _excursionService.GetExcursions(searchStringExcursionName, searchPrice,searchDiscount)
             .Select(excursion => new ExcursionIndexVM
             {
                 Id = excursion.Id,

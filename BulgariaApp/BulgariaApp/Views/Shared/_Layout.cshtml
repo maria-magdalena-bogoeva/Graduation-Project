@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav id="navbar_top" class="@*fixed-top*@ h5 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav id="navbar_top" class="@*fixed-top*@ h6 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <img src="~/img/bglogo.png" width="80" height="80" alt="">
             <div class="container">
                 <a style="font-size:30px" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgariaful</a>
@@ -26,18 +26,27 @@
                                 <a class="nav-link active dropdown-toggle" href="#"
                                    id="dropdownMenuLink" data-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">
-                                    Excursions
+                                    Attractions
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkCategories">
-                                    <a class="dropdown-item" href="">sth</a>
-                                    <a class="dropdown-item" href="">sth</a>
-                                    <a class="dropdown-item" href="">sth</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Attraction" asp-action="Index">Attractions</a>
+                                    <a class="dropdown-item" href="">Monuments</a>
+                                    <a class="dropdown-item" href="">Museum</a>
+                                    <a class="dropdown-item" href="">Mountain</a>
+                                    <a class="dropdown-item" href="">Art Gallery</a>
+                                    <a class="dropdown-item" href="">Ski Holiday</a>
+                                    <a class="dropdown-item" href="">Beach Holiday</a>
+                                    <a class="dropdown-item" href="">Cave</a>
+                                    <a class="dropdown-item" href="">Lake</a>
+                                    <a class="dropdown-item" href="">Natural Resort</a>
+                                    <a class="dropdown-item" href="">Fortress</a>
+                                    <a class="dropdown-item" href="">Church</a>
 
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Attraction" asp-action="Index">Attractions</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Excursion" asp-action="Index">Excursions</a>
                         </li>
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Client")))
                         {
