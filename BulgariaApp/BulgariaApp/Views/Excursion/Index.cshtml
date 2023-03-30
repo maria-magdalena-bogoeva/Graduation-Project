@@ -34,17 +34,17 @@
 
 
 
-<section id="products">
-    <div class="container">
+<section class="mb-5 mt-5" >
+    <div class="container ">
 
-        <div class="row mb-5">
+        <div class="row">
             @foreach (var item in Model)
             {
-                <div class="border mb-5 mx-3 pt-3" style="border-radius:20px">
+                <div class="border  mx-3 pt-3" style="border-radius:20px">
                     <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
 
-                        <div class="card ">
-                            <div class="image d-flex">
+                        <div class="card image">
+                            <div class=" d-flex img-hover-zoom img-hover-zoom--xyz">
                                 <a asp-action="Details" asp-route-id="@item.Id"><img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Picture)"></a>
                             </div>
                             <div class="card-body">
