@@ -60,7 +60,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="AttractionId" class="control-label"></label>
-                <input asp-for="AttractionId" class="form-control" />
+                @*<input asp-for="AttractionId" class="form-control" />*@
+                <select asp-for="AttractionId" class="form-control text-center">
+                    @foreach (var attraction in Model.Attractions)
+                    {
+                        <option value="@attraction.Id">@attraction.Name</option>
+                    }
+                </select>
                 <span asp-validation-for="AttractionId" class="text-danger"></span>
             </div>
             <div class="form-group">

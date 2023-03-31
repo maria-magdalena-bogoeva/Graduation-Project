@@ -1,103 +1,214 @@
-﻿@model BulgariaApp.Models.Excursion.ExcursionDetailsVM
+﻿
+@model BulgariaApp.Models.Excursion.ExcursionDetailsVM
 
 @{
     ViewData["Title"] = "Details";
 }
 
+
+
 <h1>Details</h1>
 
-<div>
-    <h4>ExcursionDetailsVM</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ExcurionName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ExcurionName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture1)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.Picture1)" alt="Image" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture2)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.Picture2)" alt="Image" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture3)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.Picture3)" alt="Image" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture4)
-        </dt>
-        <dd class="col-sm-10">
-            <iframe src="@Html.DisplayFor(model => model.Picture4)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            @*@Html.DisplayFor(model => model.Picture4)*@
-            @*<img src="@Html.DisplayFor(model => model.Picture4)" alt="Image" width="100" />*@
-        </dd>
-        @*<dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.AttractionId)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.AttractionId)
-            </dd>*@
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AttractionName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AttractionName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MaxVisitors)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MaxVisitors)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
-    </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 ">
+            <div class="card-img left-side-product-box">
+                <img class="card-img left-side-product-box" src="@Html.DisplayFor(model=>model.Picture)" alt="Image" />
+
+
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 right-side-pro-detail">
+            <h1 class="m-0 p-0 h1">@Html.DisplayFor(model => model.ExcurionName)</h1>
+            <p class="m-0 p-0 price-pro" style="">BGN @Html.DisplayFor(model => model.Price)</p>
+            <p class="pt-2" style="font-size:20px">Discount: @Html.DisplayFor(model => model.Discount) %</p>
+            <p class="pt-2" style="font-size:20px">Attraction: @Html.DisplayFor(model => model.AttractionName) </p>
+            <p class="pt-2" style="font-size:20px">Availiable places: @Html.DisplayFor(model => model.MaxVisitors) </p>
+
+            <div class="container mt-5">
+                <main role="main" class="pb-3">
+
+                    <div class="container-fluid">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rSWA">Duration</a></li>
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#rLocal">Details</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rrEPRA">Pictures</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ppp">Map</a></li>
+
+                        </ul>
+                        <div>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade" id="rSWA">
+                                    <br />
+                                    <div class="card" style="width: 100%;">
+
+                                        <div class="card-body">
+                                            <p>
+                                                Start Date: @Html.DisplayFor(model => model.StartDate)
+                                            </p>
+                                            <p>
+                                                End Date: @Html.DisplayFor(model => model.EndDate)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane active" id="rLocal">
+                                    <br />
+                                    <div class="card" style="width: 100%;">
+
+                                        <div class="card-body">
+                                            <p>
+                                                <span>
+                                                    @Html.DisplayFor(model => model.Description)
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div role="tabpanel" class="tab-pane fade" id="rrEPRA">
+                                    <br />
+                                    <div class="card" style="width: 100%;">
+
+                                        <div class="card-body">
+                                            <p>
+                                                <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
+                                                <img src="@Html.DisplayFor(model => model.Picture1)" alt="Image" width="100" />
+                                                <img src="@Html.DisplayFor(model => model.Picture2)" alt="Image" width="100" />
+                                                <img src="@Html.DisplayFor(model => model.Picture3)" alt="Image" width="100" />
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div role="tabpanel" class="tab-pane fade" id="ppp">
+                                    <br />
+                                    <div class="card" style="width: 100%;">
+
+                                        <div class="card-body">
+                                            <p>
+                                                Where is it located? <iframe src="@Html.DisplayFor(model => model.Picture4)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
@@ -105,3 +216,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
