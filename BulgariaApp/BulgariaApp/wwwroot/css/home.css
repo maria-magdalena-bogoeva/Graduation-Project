@@ -339,3 +339,14 @@ video {
     -o-animation: slideshow 12s linear 8s infinite;
     animation: slideshow 12s linear 8s infinite;
 }*/
+
+
+
+
+
+
+.backGroundImage {
+ /*   background-image: url('../img/envelope.png');
+    background-repeat: no-repeat;*/
+  background-color:lightgray;
+}

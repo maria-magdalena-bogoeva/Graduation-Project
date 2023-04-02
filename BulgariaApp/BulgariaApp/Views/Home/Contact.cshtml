@@ -1,60 +1,233 @@
-﻿<div class="row mt-5">
-    <div class="col-xs-12 col-md-12">
-        @*<div style="height: 850px;">*@
-            <div class="float-left text-center text-white  mb-4" style="background-color:purple;width:50%">
-                <h3 class="text-center pt-3">Contact Us</h3>
+﻿<link rel="stylesheet" href="~/css/home.css" />
+<style>
+    .contacts {
+        border: solid 1px black;
+        padding-top: 5px
+    }
 
-                <p>
-                    We'd love to hear from you! If you have any questions or
-                    feedback about our website, please feel free
-                </p>
-                <p >
-                    to reach out
-                    to us via email, phone, or social media.
+    .jumbotron {
+        background: #358CCE;
+        color: #FFF;
+        border-radius: 0px;
+    }
 
-                </p>
+    .jumbotron-sm {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 
+    .jumbotron small {
+        color: #FFF;
+    }
 
-                <h5 class=" pt-3">Email</h5>
+    .h1 small {
+        font-size: 24px;
+    }
 
-                <p>
-                    If you prefer to contact us via email,
-                    please send a message to <a href="https://www.abv.bg/">magi044@abv.bg</a>
-                </p>
-
-                <h5 class="pt-3">Phone</h5>
-
-                <p>
-                    If you'd like to speak with someone over the phone
-                    ,
-                </p>
-                <p style="line-height:1px">
-                    please call <a href="">+359 89 900 2717</a> during our
-                    business hours <a href="">10am-6pm</a>.
-                </p>
-
-
-                <h5 class=" pt-3">Social Media</h5>
-
-                <p>
-                    You can also contact us via social media.
-                    Follow us on <a href="https://www.facebook.com/">Facebook</a>
-                </p>
-                <p >
-                    and send us a direct message or tag us in a
-                    post
-                </p>
+    .message {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<div class="row backGroundImage pt-5 pb-5">
+    </div>
+    <div class="row @*pt-5*@" style="height:450px">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.550632172058!2d23.030714315752338!3d42.60727677917107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aacac3bbc30045%3A0x1282864432d70ccb!2z0J_QnNCTICLQpdGA0LjRgdGC0L4g0KHQvNC40YDQvdC10L3RgdC60Lgi!5e0!3m2!1sbg!2sbg!4v1679467327668!5m2!1sbg!2sbg" style="width:100%;height:100%;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
 
-                <p class="pt-4 font-weight-bolder font-italic">
-                    Thank you for reaching out to us! We will
-                    respond to your message as soon as possible.
-                </p>
 
+
+    <div class=" backGroundImage ">
+        <div class="pt-5 pb-5">
+            <div class="container">
+                <div @*class="col-xs-12 col-md-12"*@>
+
+                    <div class="row">
+                        <div class=" col-xs-4 col-md-4 contacts">
+                            <div class="float-left"><img src="~/img/phone.png " width="100" alt="phone numbers" /></div>
+                            <div class="float-right text-center">
+                                <h4>Phone Numbers</h4>
+                                <p>+359 89 900 2717<br>+359 89 845 7425</p>
+                            </div>
+
+                        </div>
+                        <div class=" contacts col-xs-4 col-md-4 ">
+                            <div class="float-left"><img src="~/img/map.png " width="100" alt="phone numbers" /></div>
+                            <div class="float-right text-center">
+                                <h4>Location</h4>
+                                <p>ул. „8-ми март“ 232,<br /> 2306 Монте Карло, Перник</p>
+                            </div>
+                        </div>
+                        <div class="contacts col-xs-4 col-md-4 ">
+                            <div class="float-left"><img src="~/img/phone.png " width="100" alt="phone numbers" /></div>
+                            <div class="float-right text-center">
+                                <h4>Office Hours</h4>
+                                <p>
+                                    Mon - Fri: 09AM to 06PM
+                                    <br /> Sat - Sun: 10AM to 04PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="float-right pl-3 @*h-50*@" style="width: 50%;height:95.5%">
-                <iframe class="text-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.550632172058!2d23.030714315752338!3d42.60727677917107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aacac3bbc30045%3A0x1282864432d70ccb!2z0J_QnNCTICLQpdGA0LjRgdGC0L4g0KHQvNC40YDQvdC10L3RgdC60Lgi!5e0!3m2!1sbg!2sbg!4v1679467327668!5m2!1sbg!2sbg" style="width:100%;height:100%;border:0;"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+        <div class="container mt-5 ">
+            <div class="row">
+
+                <div class="col">
+
+                </div>
+                <div class="col-6">
+                    <h2 class="text-center font-weight-bold">Contact Us</h2>
+                    <p @*style="padding-left:150px;padding-right:150px"*@ class="h5 text-center text-justify">
+                        We'd love to hear from you! If you have any questions or
+                        feedback about our website, please feel free to reach out and we will respond to your message as soon as possible!
+                    </p>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+
+
+
+
+            <div class="container message">
+                <div class="row">
+                    @*<div class="col-md-8">*@
+                    <div class="well well-sm">
+                        <form action="mailto:m.bogoeva2018@pmg-pernik.com" method="post" enctype="text/plain">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">
+                                            Name
+                                        </label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">
+                                            Email Address
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-envelope"></span>
+                                            </span>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject">
+                                            Subject
+                                        </label>
+                                        <select id="subject" name="subject" class="form-control" required="required">
+                                            <option value="na" selected="">Choose One:</option>
+                                            <option value="service">General Customer Service</option>
+                                            <option value="suggestions">Suggestions</option>
+                                            <option value="product">Excursions Support</option>
+                                            <option value="product">Report a problem</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">
+                                            Message
+                                        </label>
+                                        <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                                  placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pb-5">
+                                    <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row mt-5">
+    <div class="col-xs-12 col-md-12">-->
+@*<div style="height: 850px;">*@
+<!--<div class="float-left text-center text-white  mb-4" style="background-color:purple;width:50%">
+            <h3 class="text-center pt-3">Contact Us</h3>
+
+            <p>
+                We'd love to hear from you! If you have any questions or
+                feedback about our website, please feel free
+            </p>
+            <p>
+                to reach out
+                to us via email, phone, or social media.
+
+            </p>
+
+
+            <h5 class=" pt-3">Email</h5>
+
+            <p>
+                If you prefer to contact us via email,
+                please send a message to <a href="https://www.abv.bg/">magi044@abv.bg</a>
+            </p>
+
+            <h5 class="pt-3">Phone</h5>
+
+            <p>
+                If you'd like to speak with someone over the phone
+                ,
+            </p>
+            <p style="line-height:1px">
+                please call <a href="">+359 89 900 2717</a> during our
+                business hours <a href="">10am-6pm</a>.
+            </p>
+
+
+            <h5 class=" pt-3">Social Media</h5>
+
+            <p>
+                You can also contact us via social media.
+                Follow us on <a href="https://www.facebook.com/">Facebook</a>
+            </p>
+            <p>
+                and send us a direct message or tag us in a
+                post
+            </p>
+
+
+            <p class="pt-4 font-weight-bolder font-italic">
+                Thank you for reaching out to us! We will
+                respond to your message as soon as possible.
+            </p>
+
+        </div>
+        <div class="float-right pl-3 @*h-50*@" style="width: 50%;height:95.5%">
+            <iframe class="text-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.550632172058!2d23.030714315752338!3d42.60727677917107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aacac3bbc30045%3A0x1282864432d70ccb!2z0J_QnNCTICLQpdGA0LjRgdGC0L4g0KHQvNC40YDQvdC10L3RgdC60Lgi!5e0!3m2!1sbg!2sbg!4v1679467327668!5m2!1sbg!2sbg" style="width:100%;height:100%;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>-->
 @*</div>*@
+</div>
