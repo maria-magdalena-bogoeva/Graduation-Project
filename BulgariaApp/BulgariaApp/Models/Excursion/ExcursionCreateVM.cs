@@ -17,15 +17,20 @@ namespace BulgariaApp.Models.Excursion
         }
         [Key]
         public int Id { get; set; }
-
+        [Required]
+        [MinLength(5, ErrorMessage = "ExcursionName must be between 5 - 20 symbols")]
+        [MaxLength(20)]
         public string ExcurionName { get; set; }
-
+        [Required]
         public DateTime StartDate { get; set; }
-
+        [Required]
         public DateTime EndDate { get; set; }
+        [Required]
+        [MinLength(10, ErrorMessage = "Description must be between 50 - 5000 symbols")]
+        [MaxLength(5000)]
 
         public string Description { get; set; }
-
+        [Required]
         public string Picture { get; set; }
         
         public string Picture1 { get; set; }
@@ -41,10 +46,13 @@ namespace BulgariaApp.Models.Excursion
         public virtual List<AttractionPairVM> Attractions { get; set; }
 
 
+        [Required]
+        [Range(1, 30, ErrorMessage = "Visitors must be between 1 - 30 symbols ")]
 
         public int MaxVisitors { get; set; }
 
-
+        [Required]
+        [Range(100, 1000)]
         public decimal Price { get; set; }
 
         public decimal Discount { get; set; }

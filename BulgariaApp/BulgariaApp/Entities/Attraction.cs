@@ -11,11 +11,13 @@ namespace BulgariaApp.Entities
     {
         public int Id { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MinLength(5, ErrorMessage = "AttractionName must be between 5 - 20 symbols")]
+        [MaxLength(20)]
         public string AttractionName { get; set; }
         [Required]
-        [MinLength(20)]
-        [MaxLength(150)]
+        [MinLength(10, ErrorMessage = "Description must be between 50 - 5000 symbols")]
+        [MaxLength(5000)]
+       
         public string Description { get; set; }
         [Required]
         public string Picture { get; set; }
@@ -32,8 +34,6 @@ namespace BulgariaApp.Entities
         public virtual Category Category { get; set; }
 
         public virtual IEnumerable<Excursion> Excursions { get; set; } = new List<Excursion>();
-
-
 
     }
 }

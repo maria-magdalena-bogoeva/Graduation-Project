@@ -10,10 +10,10 @@
 </head>
 <body>
     <header>
-        <nav  id="navbar_top" class="fixed-top h6 navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav style="background-color: #030b15;"  id="navbar_top" class="fixed-top h6 navbar navbar-expand-sm navbar-toggleable-sm @*navbar-light bg-white*@ border-bottom box-shadow mb-3 ">
             <img src="~/img/bglogo.png" width="80" height="80" alt="">
             <div class="container">
-                <a style="font-size:30px" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bulgaria</a>
+                <a style="font-size:30px" class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">BG</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Excursion" asp-action="Index">Excursions</a>
+                            <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Excursion" asp-action="Index">Excursions</a>
                         </li>
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Client")))
                         {
@@ -75,14 +75,14 @@
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contacts</a>
+                            <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Home" asp-action="Contact">Contacts</a>
                         </li>
                         @*imeto na siats e stuck na opredelen padding i ne se myrda na dqsno*@
                         <li class="nav-item" style="padding-right:100px">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -91,12 +91,12 @@
         </nav>
     </header>
     <div class="container-fluid @*body-container*@ ">
-        <main role="main" class="pb-3 pt-5 mt-5">
+        <main role="main" class="@*pb-3*@ pt-5 mt-5">
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer @*text-muted*@">
-        <div class="container">
+    <footer style="background-color: #030b15;"  class="border-top footer @*text-muted*@">
+        <div class="container" style="font: #045fc8; color: #045fc8">
             &copy; 2023 - BulgariaApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

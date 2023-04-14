@@ -1,0 +1,150 @@
+﻿/*.hedding {
+    font-size: 20px;
+    color: #ab8181;
+}
+
+.main-section {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 5%);
+}
+
+.left-side-product-box img {
+    width: 100%;
+}
+
+.left-side-product-box img {
+    margin-top: 5px;
+}
+
+.right-side-pro-detail span {
+    font-size: 15px;
+}
+
+.right-side-pro-detail p {
+    font-size: 25px;
+    color: #a1a1a1;
+}
+
+.right-side-pro-detail .price-pro {
+    color: #E45641;
+}
+
+.right-side-pro-detail .tag-section {
+    font-size: 18px;
+    color: #5D4C46;
+}
+
+.pro-box-section .pro-box img {
+}
+
+@media (max-width:768px) {
+    .pro-box-section .pro-box img {
+        height: auto;
+    }
+}
+
+.i {
+}*/
+
+
+
+
+/*From Product Index*/
+/*.image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+    .image img {
+        width: 100%;*/
+        /*height: 300px;*/
+        /*object-fit: cover;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .image:hover img {
+        transform: scale(2,2);
+        cursor: pointer;
+    }
+
+
+#filt {
+    color: #432818;
+}
+
+select,
+.btn-n {
+    color: #432818;
+}
+
+label {
+    padding-left: 10px
+}
+
+.form-group:last-child {
+    margin-bottom: 0px;
+}
+
+h6 {
+    margin-bottom: 0px;
+    color: #432818;
+}
+
+
+.card-body {
+    padding: 8px
+}
+
+.sign {
+    width: 25px;
+    height: 25px
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}*/
+
+
+/*For category and designer input*/
+/*.input-field {
+    position: relative;
+}
+
+    .input-field input {
+        height: 35px;
+        width: 200px;
+        border-radius: 24px;
+        font-size: 15px;
+        padding: 0 15px;
+        border: 2px solid #432818;
+        background: transparent;
+        color: #432818;
+        outline: none;
+    }
+
+    .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: #432818;
+        font-size: 15px;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+.input-n:focus {
+    border: 2px solid #432818;
+}
+
+    .input-n:focus ~ label {
+        top: 0;
+        left: 15px;
+        font-size: 13px;
+        padding: 0 2px;
+        background: white;
+    }*/

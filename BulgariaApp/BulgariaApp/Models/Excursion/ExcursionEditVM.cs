@@ -16,46 +16,46 @@ namespace BulgariaApp.Models.Excursion
         [Key]
         public int Id { get; set; }
         [Required]
-        [Display(Name = "ExcursionName")]
+        [MinLength(5, ErrorMessage = "ExcursionName must be between 5 - 20 symbols")]
+        [MaxLength(20)]
+
         public string ExcurionName { get; set; }
         [Required]
-        [Display(Name = "Start Date")]
+       
         public DateTime StartDate { get; set; }
         [Required]
-        [Display(Name = "End Date")]
+       
 
         public DateTime EndDate { get; set; }
         [Required]
-        [Display(Name = "Description")]
+        [MinLength(10, ErrorMessage = "Description must be between 50 - 5000 symbols")]
+        [MaxLength(5000)]
+
         public string Description { get; set; }
         [Required]
-        [Display(Name = "Picture")]
+   
         public string Picture { get; set; }
-        [Display(Name = "Picture1")]
+   
         public string Picture1 { get; set; }
-        [Display(Name = "Picture2")]
+     
         public string Picture2 { get; set; }
-        [Display(Name = "Picture3")]
+
         public string Picture3 { get; set; }
-        [Display(Name = "Picture4")]
+        
         public string Picture4 { get; set; }
         [Required]
-        [Display(Name = "Attraction")]
+   
         public int AttractionId { get; set; }
         public virtual List<AttractionPairVM> Attractions { get; set; }
 
         [Required]
-        [Range(0,300)]
-        [Display(Name = "Max Visitors")]
+        [Range(1, 30, ErrorMessage = "Visitors must be between 1 - 30 symbols ")]
+     
         public int MaxVisitors { get; set; }
 
         [Required]
-        [Display(Name = "Price")]
+        [Range(100, 1000)]
         public decimal Price { get; set; }
-
-
-        [Display(Name = "Discount")]
-
         public decimal Discount { get; set; }
     }
 }

@@ -17,8 +17,6 @@ namespace BulgariaApp.Entities
         [Required]
         public int ExcursionId { get; set; }
         public virtual Excursion Excursion { get; set; }
-
-
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
         [Required]

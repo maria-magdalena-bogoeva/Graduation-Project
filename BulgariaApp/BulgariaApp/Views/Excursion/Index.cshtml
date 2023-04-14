@@ -35,83 +35,224 @@
 
 
 <section class="mb-5 mt-5">
-    <div class="container ">
-
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="border  mx-3 pt-3" style="border-radius:20px">
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-
-                        <div class="card image">
-                            <div class=" d-flex img-hover-zoom img-hover-zoom--xyz">
-                                <a asp-action="Details" asp-route-id="@item.Id"><img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Picture)"></a>
-                            </div>
-                            <div class="card-body">
-                                <h5>@Html.DisplayFor(modelItem => item.ExcurionName) </h5>
-
-                                <div class="d-flex flex-row my-2">
-                                    <div class="text-danger">BGN @Html.DisplayFor(modelItem => item.Price)</div>
-                                </div>
-                                <div class="d-flex flex-row my-2">
-
-                                    <div class="text-muted">
-                                        @Html.DisplayNameFor(modelItem => item.Discount): @Html.DisplayFor(modelItem => item.Discount) %
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row my-2">
-
-                                    @Html.DisplayNameFor(modelItem => item.StartDate): @Html.DisplayFor(modelItem => item.StartDate)
-                                </div>
-                                <div class="d-flex flex-row my-2">
-
-                                    @Html.DisplayNameFor(modelItem => item.EndDate): @Html.DisplayFor(modelItem => item.EndDate)
-                                </div>
-                                <div class="d-flex flex-row my-2">
-
-                                    @Html.DisplayNameFor(modelItem => item.MaxVisitors) Count: @Html.DisplayFor(modelItem => item.MaxVisitors)
-                                </div>
-                                <div class="d-flex flex-row my-2">
+    @*<div class="container ">*@ @*bez tova stava na full screen width*@
 
 
-                                    @if (this.User.Identity.IsAuthenticated)
-                                    {
 
-                                        @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
-                                        {
-                                            ExcursionId = item.Id
-                                        })
+    @*side bar*@
+    <!--<div class="row float-left">
+        <aside class="col-sm-4">
+            <p>Filter 1</p>-->
+    @*<form asp-controller="Excursion" asp-action="Index" method="get">
+            <p>
+                <input type="text" placeholder="ExcursionName" name="SearchStringExcursionName" />
+                <input type="text" placeholder="Price" name="SearchPrice" />
+                <input type="text" placeholder="Discount" name="SearchDiscount" />
+                <input type="submit" value="Filter">
+            </p>
 
-                                    }
+        </form>*@
 
-                                </div>
+    <!--<div class="card">
+        <article class="card-group-item">
+            <header class="card-header">
+                <h6 class="title">Discount </h6>
+            </header>
+            <div class="filter-content">
+                <div class="card-body">
+                    <form>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <span class="form-check-label">
+                                Mersedes Benz
+                            </span>
+                        </label>-->
+    <!-- form-check.// -->
+    <!--<label class="form-check">
+        <input class="form-check-input" type="checkbox" value="">
+        <span class="form-check-label">
+            Nissan Altima
+        </span>
+    </label>-->
+    <!-- form-check.// -->
+    <!--<label class="form-check">
+        <input class="form-check-input" type="checkbox" value="">
+        <span class="form-check-label">
+            Another Brand
+        </span>
+    </label>-->
+    <!-- form-check.// -->
+    <!--</form>
 
-                                <div>
-                                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                                    {
-                                        <a asp-action="Edit" asp-route-id="@item.Id"> edit@*<img src="~/images/edit.png" width="25">*@</a>
-                                    }
-                                    @*<a asp-action="Details" asp-route-id="@item.Id"><img src="~/images/details.png" width="40" /></a>*@
-                                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                                    {
+    </div>-->
+    <!-- card-body.// -->
+    <!--</div>
+    </article>-->
+    <!-- card-group-item.// -->
+    <!--<article class="card-group-item">
+        <header class="card-header">
+            <h6 class="title">Price </h6>
+        </header>
+        <div class="filter-content">
+            <div class="card-body">
+                <label class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadio" value="">
+                    <span class="form-check-label">
+                        First hand items
+                    </span>
+                </label>
+                <label class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadio" value="">
+                    <span class="form-check-label">
+                        Brand new items
+                    </span>
+                </label>
+                <label class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadio" value="">
+                    <span class="form-check-label">
+                        Some other option
+                    </span>
+                </label>
+            </div>-->
+    <!-- card-body.// -->
+    <!--</div>
+    </article>-->
+    <!-- card-group-item.// -->
+    <!--</div>--> <!-- card.// -->
+    <!--</aside>--> <!-- col.// -->
+    <!--</div>-->
 
-                                        <a asp-action="Delete" asp-route-id="@item.Id">delete @*<img src="~/images/delete.svg" width="25" />*@</a>
-                                    }
-                                </div>
+ 
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="border  mx-3 pt-3" style="border-radius:20px">
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
 
-                            </div>
+                    <div class="card image">
+                        <div class=" d-flex img-hover-zoom img-hover-zoom--xyz">
+                            <a asp-action="Details" asp-route-id="@item.Id"><img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Picture)"></a>
                         </div>
+                        <div class="card-body">
+                            <h5>@Html.DisplayFor(modelItem => item.ExcurionName) </h5>
 
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-danger">BGN @Html.DisplayFor(modelItem => item.Price)</div>
+                            </div>
+                            <div class="d-flex flex-row my-2">
+
+                                <div class="text-muted">
+                                    @Html.DisplayNameFor(modelItem => item.Discount): @Html.DisplayFor(modelItem => item.Discount) %
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row my-2">
+
+                                @Html.DisplayNameFor(modelItem => item.StartDate): @Html.DisplayFor(modelItem => item.StartDate)
+                            </div>
+                            <div class="d-flex flex-row my-2">
+
+                                @Html.DisplayNameFor(modelItem => item.EndDate): @Html.DisplayFor(modelItem => item.EndDate)
+                            </div>
+                            <div class="d-flex flex-row my-2">
+
+                                @Html.DisplayNameFor(modelItem => item.MaxVisitors) Count: @Html.DisplayFor(modelItem => item.MaxVisitors)
+                            </div>
+                            <div class="d-flex flex-row my-2">
+
+
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+
+                                    @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
+                                    {
+                                        ExcursionId = item.Id
+                                    })
+
+                                }
+
+                            </div>
+
+                            <div>
+                                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.Id"> edit@*<img src="~/images/edit.png" width="25">*@</a>
+                                }
+                                @*<a asp-action="Details" asp-route-id="@item.Id"><img src="~/images/details.png" width="40" /></a>*@
+                                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                                {
+
+                                    <a asp-action="Delete" asp-route-id="@item.Id">delete @*<img src="~/images/delete.svg" width="25" />*@</a>
+                                }
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
-            }
-        </div>
+            </div>
+        }
     </div>
+
 </section>
 
 
 
 
+
+<!--<!-- Sidebar filter section -->
+<!--<section id="sidebar">
+    <div class=" pb-2 ml-2">
+        <h4 id="filt">Filters</h4>
+    </div>-->
+<!--Category and designer input-->
+<!--<form asp-controller="Product" asp-action="Index" method="get" class="border-bottom">
+    <div class="input-field mb-3">
+        <input class="input-n" type="text" name="SearchStringCategoryName">
+        <label>Category</label>
+    </div>
+    <div class="input-field">
+        <input class="input-n" type="text" name="SearchStringDesignerName">
+        <label>Designer</label>
+    </div>
+    <input type="submit" value="Filter" class="btn-n btn my-4 ml-1 input-n" />
+
+</form>
+<div class="py-2 border-bottom ml-3">
+    <h6 class="font-weight-bold mb-3">Categories</h6>
+    <div class="form-group"><a asp-controller="Product" asp-action="Decorations">Decorations</a> </div>
+    <div class="form-group"><a asp-controller="Product" asp-action="Paintings">Paintings</a> </div>
+    <div class="form-group"> <a asp-controller="Product" asp-action="Moss">Scandinavian Moss</a> </div>
+    <div class="form-group"><a asp-controller="Product" asp-action="Keys">Key Houses</a> </div>
+    <div class="form-group"> <a asp-controller="Product" asp-action="Calendars">Calendars</a> </div>
+    <div class="form-group"><a asp-controller="Product" asp-action="Albums">Albums</a> </div>
+    <div class="form-group"> <a asp-controller="Product" asp-action="Cards">Cards</a> </div>-->
+@*@foreach (var category in Model)
+    {
+        <form>
+            <div class="form-group"> <input type="checkbox"> <label >@Html.DisplayFor(modelItem => category.CategoryName)</label> </div>
+        </form>
+    }*@
+<!--</div>
+<div class="py-2 ml-3 mb-5">
+    <h6 class="font-weight-bold mb-3">Designers</h6>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=art+shop">Art Shop</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=martis+craft">Martis Craft</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=s+gifts">S Gifts</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=s+art">S Art</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=crafteria">Crafteria</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=beni+art+design">Beni Art Design</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=mossaika">Mossaika</a> </div>
+    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=artelly">ARTELLY</a> </div>-->
+@*<form>
+        @foreach (var designer in Model)
+        {
+            <div class="form-group"> <input type="checkbox"> <label>@Html.DisplayFor(modelItem => designer.DesignerName)</label> </div>
+        }
+    </form>*@
+
+@*</div>
+
+    </section>-->*@
 
 
 

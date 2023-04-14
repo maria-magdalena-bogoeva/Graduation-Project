@@ -10,9 +10,9 @@ namespace BulgariaApp.Entities
     {
         public int Id { get; set; }
         [Required]
-        [MaxLength(45)]
         public string CategoryName { get; set; }
 
-        public virtual IEnumerable<Attraction> Attractions { get; set; } = new List<Attraction>();
+        public virtual IEnumerable<Attraction> 
+            Attractions { get; set; } = new List<Attraction>();
     }
 }
