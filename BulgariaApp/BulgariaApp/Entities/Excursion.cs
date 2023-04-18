@@ -28,7 +28,6 @@ namespace BulgariaApp.Entities
         public string Picture2 { get; set; }
         public string Picture3 { get; set; }
         public string Picture4 { get; set; }
-
         [Required]
         public int AttractionId { get; set; }
         public virtual Attraction Attraction { get; set; }
@@ -37,11 +36,8 @@ namespace BulgariaApp.Entities
         public int MaxVisitors { get; set; }
         [Required]
         [Range(100,1000)]
-
         public decimal Price { get; set; }
-
         public decimal Discount { get; set; }
-
         public virtual IEnumerable<Reservation> Reservations { get; set; } = new List<Reservation>();
     }
 }

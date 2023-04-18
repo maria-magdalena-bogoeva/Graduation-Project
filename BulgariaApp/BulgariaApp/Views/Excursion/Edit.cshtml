@@ -3,12 +3,36 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<style>
+    h1 {
+        color: #d6c3a5;
+        font-size:45px;
+    }
 
-<h1>Edit</h1>
+    h3 {
+        color: #d6c3a5;
+    }
 
-<h4>ExcursionEditVM</h4>
+    dt {
+        color: #d6c3a5;
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    dd {
+        color: white;
+        font-size: 18px;
+    }
+    div {
+        color: #d6c3a5;
+    }
+
+</style>
+<h1 class="pb-5 pt-5 pl-5 ml-5 mb-2">Edit</h1>
+
+
 <hr />
-<div class="row">
+<div class="row  pl-5 ml-5">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -91,7 +115,7 @@
     </div>
 </div>
 
-<div>
+<div class="pl-5 ml-5 mb-5 pb-5">
     <a asp-action="Index">Back to List</a>
 </div>
 

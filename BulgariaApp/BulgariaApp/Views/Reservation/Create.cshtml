@@ -3,89 +3,109 @@
 @{
     ViewData["Title"] = "Confirm";
 }
+<style>
 
-<h1>Create</h1>
-<form asp-controller="Reservation" asp-action="Create" method="post">
-    <div>
-        <h4>ReservationConfirmVM</h4>
-        <hr />
-        <dl class="row">
-            @*<dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.ReservationDate)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.ReservationDate)
-                </dd>
-                <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.UserId)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.UserId)
-                </dd>
-                <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.User)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.User)
-                </dd>
-                <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.ExcursionId)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.ExcursionId)
-                </dd>*@
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ExcursionName)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ExcursionName)
-            </dd>
-            <dt class="col-sm-2">
-                @*@Html.DisplayNameFor(model => model.Picture)*@
-                Picture
-            </dt>
-            <dd class="col-sm-10">
-                <img src="@Html.DisplayFor(model => model.Picture)" alt="img" width="100" />
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Quantity)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Quantity)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Discount)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Discount)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.TotalPrice)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.TotalPrice)
-            </dd>
-        </dl>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Confirm" class="btn btn-primary" />
-    </div>
-    <input type="hidden" asp-for="ExcursionId" value="@Model.ExcursionId" />
-    <input type="hidden" asp-for="Quantity" value="@Model.Quantity" />
-    <input type="hidden" asp-for="UserId" value="@Model.UserId" />
-    <input type="hidden" asp-for="Price" value="@Model.Price" />
-    <input type="hidden" asp-for="Discount" value="@Model.Discount" />
-</form>
-<div>
-    <a asp-controller="Excursion" asp-action="Index">Back to List</a>
-</div>
+    h1 {
+        color: #d6c3a5;
+    }
 
+    dd {
+        color: white;
+        font-size: 20px;
+    }
+
+    dt {
+        color: #d6c3a5;
+        font-size: 20px;
+    }
+</style>
+<body style="background-color: #192d50;">
+
+        <form asp-controller="Reservation" asp-action="Create" method="post">
+
+            <div class="mt-5" style="padding-left:200px">
+                <h1 class="pt-5">Confirm Reservation</h1>
+                <hr />
+                <dl class="row">
+                    @*<dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ReservationDate)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ReservationDate)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.UserId)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.UserId)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.User)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.User)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ExcursionId)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ExcursionId)
+            </dd>*@
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ExcursionName)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ExcursionName)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @*@Html.DisplayNameFor(model => model.Picture)*@
+                        Picture
+                    </dt>
+                    <dd class="col-sm-10">
+                        <img src="@Html.DisplayFor(model => model.Picture)" alt="img" width="100" />
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Quantity)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Discount)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Discount)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.TotalPrice)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.TotalPrice)
+                    </dd>
+                </dl>
+            </div>
+            <div class="form-group" style="padding-left:200px">
+                <input type="submit" value="Confirm" class="btn btn-primary" />
+            </div>
+            <input type="hidden" asp-for="ExcursionId" value="@Model.ExcursionId" />
+            <input type="hidden" asp-for="Quantity" value="@Model.Quantity" />
+            <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+            <input type="hidden" asp-for="Price" value="@Model.Price" />
+            <input type="hidden" asp-for="Discount" value="@Model.Discount" />
+        </form>
+        <div style="padding-left:200px">
+            <a asp-controller="Excursion" asp-action="Index">Back to List</a>
+        </div>
+   
+
+ 
+</body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

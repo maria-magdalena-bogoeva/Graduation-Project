@@ -6,14 +6,15 @@
     <title>@ViewData["Title"] - BulgariaApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
 <body>
     <header>
-        <nav style="background-color: #030b15;"  id="navbar_top" class="fixed-top h6 navbar navbar-expand-sm navbar-toggleable-sm @*navbar-light bg-white*@ border-bottom box-shadow mb-3 ">
-            <img src="~/img/bglogo.png" width="80" height="80" alt="">
+        <nav style="background-color: #030b15; font-size: 20px;"  id="navbar_top" class="fixed-top h6 navbar navbar-expand-sm navbar-toggleable-sm @*navbar-light bg-white*@ border-bottom box-shadow mb-3 ">
+            <img   src="~/img/bglogo.png" width="80" height="80" alt=""class="img-fluid">
             <div class="container">
-                <a style="font-size:30px" class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">BG</a>
+                <a  class="navbar-brand name" style="font-size:27px"asp-area="" asp-controller="Home" asp-action="Index">BG</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -51,7 +52,7 @@
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Client")))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="MyReservations">My Reservations</a>
+                                <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Reservation" asp-action="MyReservations">My Reservations</a>
                             </li>
                         }
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
@@ -80,7 +81,7 @@
                         <li class="nav-item">
                             <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Home" asp-action="Contact">Contacts</a>
                         </li>
-                        @*imeto na siats e stuck na opredelen padding i ne se myrda na dqsno*@
+                      
                         <li class="nav-item" style="padding-right:100px">
                             <a class="nav-link @*text-dark*@" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
@@ -90,7 +91,7 @@
             </div>
         </nav>
     </header>
-    <div class="container-fluid @*body-container*@ ">
+    <div class="container-fluid @*body-container*@  " style="background-color: #192d50">
         <main role="main" class="@*pb-3*@ pt-5 mt-5">
             @RenderBody()
         </main>

@@ -133,10 +133,12 @@ body {
     text-align: center;
     cursor: pointer;
     border-radius: 90px;
+    box-shadow: 4px 4px #003f87;
 }
     .button:hover {
         /* background-color: rgb(252, 119, 5);*/
         background-color: #030b15;
+        box-shadow: 4px 4px #16498a;
     }
 .buttonPop {
     background-color: #045fc8;
@@ -160,3 +162,51 @@ body {
     padding: 10px;
     padding-top:10px;
 }
+* {
+    font-family: 'Times New Roman';
+}
+
+
+
+
+/*
+Small devices (landscape phones, 576px and up)*/
+/*@media (min-width: 576px) {
+    * {
+        font-size: 15px;
+    }
+    .name {
+        font-size: 17px;
+    }
+}*/
+
+/*Medium devices (tablets, 768px and up)*/
+/*@media (min-width: 768px) {
+    * {
+        font-size: 15px;
+    }
+    .name {
+        font-size: 17px;
+    }
+}*/
+
+/* Large devices (desktops, 992px and up)*/
+/*@media (min-width: 992px) {
+    * {
+        font-size:20px;
+    }
+    .name {
+        font-size: 22px;
+    }
+}*/
+
+/*Extra large devices (large desktops, 1200px and up)*/
+/*@media (min-width: 1200px) {
+   *{
+       font-size:25px;
+   }
+    .name {
+        font-size: 27px;
+    }
+   
+}*/

@@ -17,22 +17,17 @@ namespace BulgariaApp.Entities
         [Required]
         [MinLength(10, ErrorMessage = "Description must be between 50 - 5000 symbols")]
         [MaxLength(5000)]
-       
         public string Description { get; set; }
         [Required]
         public string Picture { get; set; }
         public string Picture1 { get; set; }
-
         public string Picture2 { get; set; }
-
         public string Picture3 { get; set; }
-
         public string Picture4 { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
-
         public virtual IEnumerable<Excursion> Excursions { get; set; } = new List<Excursion>();
 
     }

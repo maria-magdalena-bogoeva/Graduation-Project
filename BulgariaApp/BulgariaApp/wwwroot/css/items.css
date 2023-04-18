@@ -89,3 +89,6 @@ h4 {
 .img-hover-zoom--point-zoom:hover img {
     transform: scale(5);
 }
+* {
+    font-family: 'Times New Roman';
+}

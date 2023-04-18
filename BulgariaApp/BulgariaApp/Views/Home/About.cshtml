@@ -1,20 +1,410 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    @*<style>
+            body {
+                padding: 5%;
+            }
 
+            .grid-container {
+                clear: both;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                grid-template-columns: 214px 214px 214px;
+                grid-gap: 20px 10px;
+            }
+
+            .grid-item {
+                padding: 0;
+                margin: 0;
+            }
+
+                .grid-item .select-item {
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    background: #273c75;
+                    height: 150px;
+                    padding: 5%;
+                    margin: 0;
+                    color: #fff;
+                    text-align: center;
+                }
+
+                .grid-item .select-item-show {
+                    display: none;
+                    clear: both;
+                }
+
+                    .grid-item .select-item-show .icon-select {
+                        display: block;
+                    }
+
+                    .grid-item .select-item-show .select-block {
+                        display: block;
+                        height: 150px;
+                    }
+
+                        .grid-item .select-item-show .select-block .select-detail {
+                            display: block;
+                            position: absolute;
+                            border: 6px solid #c23616;
+                            left: 13.4%;
+                            right: 13.4%;
+                            height: 150px;
+                        }
+            /*-----------------------------------------------------*/
+            .grid-item-select {
+                padding: 0;
+                margin: 0;
+            }
+
+                .grid-item-select .select-item {
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    background: #273c75;
+                    height: 150px;
+                    padding: 5%;
+                    margin: 0;
+                }
+
+                .grid-item-select .select-item-show {
+                    display: block;
+                    clear: both;
+                    margin-bottom: 20px;
+                }
+
+                    .grid-item-select .select-item-show .icon-select {
+                        display: block;
+                        margin-top: -20px;
+                        margin-left: 90px;
+                        width: 0px;
+                        height: 0px;
+                        border-top: 20px solid transparent;
+                        border-right: 20px solid transparent;
+                        border-left: 20px solid transparent;
+                        border-bottom: 20px solid #c23616;
+                    }
+
+                    .grid-item-select .select-item-show .select-block {
+                        display: block;
+                        height: 150px; /* ต้องเผื่อขนาดช่องที่ซ่อนไว้*/
+                    }
+
+                        .grid-item-select .select-item-show .select-block .select-detail {
+                            display: block;
+                            position: absolute;
+                            border: 6px solid #c23616;
+                            left: 13.4%;
+                            right: 13.4%;
+                            height: 150px; /* ต้องเผื่อขนาดช่องที่ซ่อน*/
+                            text-align: center;
+                            padding: 5%;
+                        }
+        </style>*@
 </head>
-<body>
-    Welcome to our About Us page!
+<body style=" background-color: #25447a;">
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <!--@*<div class="container">*@
+        <!--<div class="grid-container">
+            <div class="grid-item">
+                <div class="select-item img1"> Text 1</div>
+                <div class="select-item-show" id="#myDIV1">
+                    <div class="icon-select"></div>
+                    <div class="select-block">
+                        <div class="select-detail"> Text 1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="select-item img2"></div>
+                <div class="select-item-show">
+                    <div class="icon-select" id="#myDIV2"></div>
+                    <div class="select-block">
+                        <div class="select-detail"> Text 2 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="select-item img3 "></div>
+                <div class="select-item-show" id="#myDIV3">
+                    <div class="icon-select"></div>
+                    <div class="select-block">
+                        <div class="select-detail"> Text 3 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="select-item img4"></div>
+                <div class="select-item-show" id="#myDIV4">
+                    <div class="icon-select"></div>
+                    <div class="select-block">
+                        <div class="select-detail"> Text 4 </div>
+                    </div>
+                </div>
+            </div>
 
-    We are a passionate team of professionals who take immense pride in creating innovative solutions for our clients. Based out of [location], we have been serving our clients for more than [number] years. We specialize in [industry/domain].
 
-    At our core, we are driven by a singular focus- to add value to our clients’ business. We do not restrict ourselves to just addressing their immediate needs, but try to create solutions that are futuristic and strategic in nature. Our goal is to help our clients achieve their business objectives in the most efficient and effective manner possible.
 
-    Our team comprises of experienced professionals who have a wealth of experience in their respective fields. We are committed to delivering high quality solutions that exceed our clients’ expectations. We understand that every client has unique needs and our solutions are tailored to meet those needs.
 
-    At [company name], we firmly believe that our clients’ success is our success. We strive to build strong, long-term relationships with our clients by providing them with exceptional service, support and solutions. We take pride in being a trusted partner to our clients and helping them achieve their business goals.
 
-    If you have any questions or would like to learn more about our services, please feel free to reach out to us. We would be happy to discuss how we can help your business grow.
+
+        </div>-->
+    @*</div>*@
+
+
+    @*<script>$('.grid-item').click(function () {
+            $(this).siblings().removeClass('grid-item-select');
+            $(this).addClass('grid-item-select');
+        });
+
+        $(document).ready(function () {
+            $(".img1").click(function () {
+                $("#myDIV1").toggle();
+            });
+            $(".img2").click(function () {
+                $("#myDIV2").toggle();
+            });
+            $(".img3").click(function () {
+                $("#myDIV3").toggle();
+            });
+            $(".img4").click(function () {
+                $("#myDIV4").toggle();
+            });
+            $(".img5").click(function () {
+                $("#myDIV5").toggle();
+            });
+            $(".img6").click(function () {
+                $("#myDIV6").toggle();
+            });
+            $(".img7").click(function () {
+                $("#myDIV7").toggle();
+            });
+            $(".img8").click(function () {
+                $("#myDIV8").toggle();
+            });
+            $(".img9").click(function () {
+                $("#myDIV9").toggle();
+            });
+            $(".img10").click(function () {
+                $("#myDIV10").toggle();
+            });
+        });</script>-->*@
+
+
+
+    <style>
+        #myDIV {
+            display: none;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: #192d50;
+            margin-top: 5px;
+            padding-left: 300px;
+            padding-right: 300px;
+            text-align: justify;
+        }
+
+        #myDIV1 {
+            display: none;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: #192d50;
+            margin-top: 5px;
+            padding-left: 300px;
+            padding-right: 300px;
+            text-align: justify;
+        }
+
+        #myDIV2 {
+            display: none;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: #192d50;
+            margin-top: 5px;
+            padding-left: 300px;
+            padding-right: 300px;
+            text-align: justify;
+           
+        }
+        #myDIVBG {
+            display: none;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: #192d50;
+            margin-top: 5px;
+            padding-left: 300px;
+            padding-right: 300px;
+            text-align: justify;
+        }
+
+        .buttonAbout {
+            display: block;
+            margin: 0 auto;
+            color: #d6c3a5;
+            background-color: #5d6d80;
+            border-radius: 40px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-shadow: 3px 3px #888888;
+        }
+            .buttonAbout:hover {
+                background-color: #465261;
+            }
+
+        .containerrr {
+            border: 3px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        .h1 {
+            color: #d6c3a5;
+        }
+        .h4 {
+           
+            color:white;
+            border: 4px dotted black;
+        }
+       /* .background {
+            background-color: #030b15;
+        }*/
+     .head{
+         display:inline-block;
+         width:33%;
+         text-align:center;
+     }
+    </style>
+    <div>
+        <div class="head"> <img class="img-fluid"  src="~/img/bglogo.png" width="150" /></div>
+        <div class="text-center head h1 pt-5 pb-5 font-weight-bold"> About Us</div>
+        <div class="head"> <img class="img-fluid"  src="~/img/bglogo.png" width="150" /></div>
+
+    </div>
+
+    <div class="row"  style="background-color: #25447a;">
+
+        <div class="containerrr" style="width: 100%;height: 200px;">
+            <h2>  <button class="buttonAbout" onclick="myFunctionBG()">Why you should visit Bulgaria</button></h2>
+        </div>
+    </div>
+    <div class="h4" id="myDIVBG" style="background-color: #363e47; ">
+        <p>
+            Bulgaria is a destination with numerous important historical sites, from the dawn of
+            European civilization to modern times. Bulgarians are very proud of their heritage,
+            stories and folklore still form an important part of their lives where legends and
+            traditions are passed from generation to generation.
+
+
+
+        </p>
+        <iframe class="mt-5"  width="100%" height="515" src="https://www.youtube.com/embed/L82plsR0nig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="row ">
+        <div class="containerrr background" style="width: 33%;height: 200px;">
+            <h2> <button class="buttonAbout" onclick="myFunction()">Who are we?</button></h2>
+        </div>
+        <div class="containerrr " style="width: 33%; height: 200px;">
+            <h2>  <button class="buttonAbout" onclick="myFunction1()">What are our advantages?</button></h2>
+        </div>
+        <div class="containerrr background" style="width: 34%; height: 200px;">
+            <h2>    <button class="buttonAbout" onclick="myFunction2()">Why to trust us?</button></h2>
+        </div>
+    </div>
+
+
+
+
+    <div id="myDIV" class="h4" style="background-color: #363e47; ">
+    
+            <p>
+                Bulgaria Travel Agency is a relatively new licensed travel agency in Bulgaria. Our main goal is everyone to get
+                to know the Bulgarian sights, nature, traditions and history in an accessible way for everybody.
+            </p>
+        
+       
+    </div>
+
+    <div class="h4" id="myDIV1"style="background-color: #363e47; ">
+        <p>
+            Here are just some of the things that have made us one of our customers' preferred vacation partners in
+            such a short time:
+        </p>
+        <ul class="pt-3 font-italic pb-3">
+            <li> our highly competent and ambitious team</li>
+            <li>   our correct partners (tour operators) and personal contacts in all countries we operate</li>
+            <li>the best offers at exclusive package prices</li>
+            <li> possibility to make a reservation entirely online</li>
+        </ul>
+       
+
+
+        <p>
+            All this gives you a guarantee that, in addition to the incredible prices and conditions, as customers of
+            Bulgaria, you get a guarantee of a peaceful trip and a smiling vacation!
+        </p>
+    </div>
+    <div class="h4" id="myDIV2"style="background-color: #363e47; ">
+        <p>
+            Tourist agency Bulgaria offers a wide range of offers according to your preferences. With us, you can find
+            weekend programs, holidays in luxurious All Inclusive hotels for both
+            couples and families with children, destinations with fabulous beaches and great sights.
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        function myFunction1() {
+            var x = document.getElementById("myDIV1");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        function myFunction2() {
+            var x = document.getElementById("myDIV2");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        function myFunctionBG() {
+            var x = document.getElementById("myDIVBG");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
 </html>

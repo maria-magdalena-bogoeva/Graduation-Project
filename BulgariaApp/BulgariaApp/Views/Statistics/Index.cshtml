@@ -3,46 +3,60 @@
 
 
 @{ViewData["Title"] = "Statistics";}
+<style>
+    * {
+        color: white;
+    }
 
-<h4 class="text-center">Statistics</h4>
-<div class="text-center">
-    <div class="col-xl-8">
-        <div class="card-group pb-0">
-            <div class="card-columns text-center"></div>
+    h1 {
+        color: #d6c3a5;
+    }
+
+    th {
+        color: #d6c3a5;
+    }
+</style>
+<body style="background-color: #021326 ">
+    <h1 class="text-center pt-5 pb-5">Statistics</h1>
+    <div class="text-center">
+        <div class="col-xl-8">
+            <div class="card-group pb-0">
+                <div class="card-columns text-center"></div>
+            </div>
+            <table class="table table-striped" style="width:150%">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CountClients)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CountProducts)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CountOrders)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SumOrders)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.CountClients)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CountProducts)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CountOrders)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SumOrders)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <table class="table table-striped" style="width:150%">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CountClients)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CountProducts)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CountOrders)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.SumOrders)
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(model => model.CountClients)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => model.CountProducts)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => model.CountOrders)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => model.SumOrders)
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
-</div>
+    </body>

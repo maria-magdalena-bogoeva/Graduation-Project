@@ -6,258 +6,170 @@
 }
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="/css/items.css" rel="stylesheet" />
-
-<h1>Index</h1>
+<link href="/css/index.css " rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+@*<h1>Index</h1>*@
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
-    <p>
+    <p class="pt-5 pl-5">
         <a asp-action="Create">Create New</a>
     </p>
 }
-<form asp-controller="Excursion" asp-action="Index" method="get">
-    <p>
-        ExcursionName <input type="text" name="SearchStringExcursionName" />
-        Price <input type="text" name="SearchPrice" />
-        Discount <input type="text" name="SearchDiscount" />
-        <input type="submit" value="Filter">
-    </p>
-
-</form>
-
-
-
-
-
-
-
-
-
-
-
-<section class="mb-5 mt-5">
-    @*<div class="container ">*@ @*bez tova stava na full screen width*@
-
-
-
-    @*side bar*@
-    <!--<div class="row float-left">
-        <aside class="col-sm-4">
-            <p>Filter 1</p>-->
+<style>
+    .card {
+        /*  border: green;*/
+        /* background-color: #25447a;*/
+        /* background-color: #4c89f5;*/
+        background-color: #e0e0de;
+    }
+    body {
+        background-color: #192d50;
+    }
+    header {
+        color: #d6c3a5;
+    }
+    a{
+        font-size:20px;
+    }
+</style>
+<body>
     @*<form asp-controller="Excursion" asp-action="Index" method="get">
             <p>
-                <input type="text" placeholder="ExcursionName" name="SearchStringExcursionName" />
-                <input type="text" placeholder="Price" name="SearchPrice" />
-                <input type="text" placeholder="Discount" name="SearchDiscount" />
+                ExcursionName <input type="text" name="SearchStringExcursionName" />
+                Price <input type="text" name="SearchPrice" />
+                Discount <input type="text" name="SearchDiscount" />
                 <input type="submit" value="Filter">
             </p>
 
         </form>*@
+    @*searchbar*@
+    <!--<div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Search...">
 
-    <!--<div class="card">
-        <article class="card-group-item">
-            <header class="card-header">
-                <h6 class="title">Discount </h6>
-            </header>
-            <div class="filter-content">
-                <div class="card-body">
-                    <form>
-                        <label class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
-                            <span class="form-check-label">
-                                Mersedes Benz
-                            </span>
-                        </label>-->
-    <!-- form-check.// -->
-    <!--<label class="form-check">
-        <input class="form-check-input" type="checkbox" value="">
-        <span class="form-check-label">
-            Nissan Altima
-        </span>
-    </label>-->
-    <!-- form-check.// -->
-    <!--<label class="form-check">
-        <input class="form-check-input" type="checkbox" value="">
-        <span class="form-check-label">
-            Another Brand
-        </span>
-    </label>-->
-    <!-- form-check.// -->
-    <!--</form>
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>-->
+    @*<input type="image" class="fas fa-search" />*@
 
+    <!--</div>
+        </div>
     </div>-->
-    <!-- card-body.// -->
-    <!--</div>
-    </article>-->
-    <!-- card-group-item.// -->
-    <!--<article class="card-group-item">
-        <header class="card-header">
-            <h6 class="title">Price </h6>
-        </header>
-        <div class="filter-content">
-            <div class="card-body">
-                <label class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadio" value="">
-                    <span class="form-check-label">
-                        First hand items
-                    </span>
-                </label>
-                <label class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadio" value="">
-                    <span class="form-check-label">
-                        Brand new items
-                    </span>
-                </label>
-                <label class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadio" value="">
-                    <span class="form-check-label">
-                        Some other option
-                    </span>
-                </label>
-            </div>-->
-    <!-- card-body.// -->
-    <!--</div>
-    </article>-->
-    <!-- card-group-item.// -->
-    <!--</div>--> <!-- card.// -->
-    <!--</aside>--> <!-- col.// -->
-    <!--</div>-->
 
- 
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="border  mx-3 pt-3" style="border-radius:20px">
-                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
 
-                    <div class="card image">
-                        <div class=" d-flex img-hover-zoom img-hover-zoom--xyz">
-                            <a asp-action="Details" asp-route-id="@item.Id"><img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Picture)"></a>
-                        </div>
-                        <div class="card-body">
-                            <h5>@Html.DisplayFor(modelItem => item.ExcurionName) </h5>
 
-                            <div class="d-flex flex-row my-2">
-                                <div class="text-danger">BGN @Html.DisplayFor(modelItem => item.Price)</div>
+
+    <section class="mb-5 mt-5 pb-5">
+        <aside class="col-sm-4">
+            <div class="card float-left">
+                <article class="card-group-item" style="background-color: #25447a">
+                    <header class="card-header"><h3 class="title">What are you looking for? </h3></header>
+                    <div class="filter-content">
+
+                        <form asp-controller="Excursion" asp-action="Index" method="get" class="pl-5">
+                            <p>
+                                <input id="ip4" type="text" placeholder="Excursion Name" name="SearchStringExcursionName" />
+                                <input id="ip4" type="text" placeholder="Price" name="SearchPrice" />
+                                <input id="ip4" type="text" placeholder="Discount" name="SearchDiscount" />
+                                <br />  <input id="ip2" type="submit" value="Search">
+                            </p>
+
+                        </form>
+                        <header class="card-header text-center"><h4 class="title">Discounts</h4></header>
+                        <div class="pl-5 ml-5">
+                            <div class="list-group list-group-flush">
+                                <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=5" class="list-group-item text-primary" style="background-color: #25447a"><strong>5% </strong></a> 
+                                <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=10" class="list-group-item text-primary" style="background-color: #25447a"><strong>10% </strong> </a>
+                                <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=20" class="list-group-item text-primary" style="background-color: #25447a"><strong>20% </strong></a>
+                                <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=50" class="list-group-item text-primary" style="background-color: #25447a"><strong> 50% </strong></a>
                             </div>
-                            <div class="d-flex flex-row my-2">
-
-                                <div class="text-muted">
-                                    @Html.DisplayNameFor(modelItem => item.Discount): @Html.DisplayFor(modelItem => item.Discount) %
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row my-2">
-
-                                @Html.DisplayNameFor(modelItem => item.StartDate): @Html.DisplayFor(modelItem => item.StartDate)
-                            </div>
-                            <div class="d-flex flex-row my-2">
-
-                                @Html.DisplayNameFor(modelItem => item.EndDate): @Html.DisplayFor(modelItem => item.EndDate)
-                            </div>
-                            <div class="d-flex flex-row my-2">
-
-                                @Html.DisplayNameFor(modelItem => item.MaxVisitors) Count: @Html.DisplayFor(modelItem => item.MaxVisitors)
-                            </div>
-                            <div class="d-flex flex-row my-2">
-
-
-                                @if (this.User.Identity.IsAuthenticated)
-                                {
-
-                                    @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
-                                    {
-                                        ExcursionId = item.Id
-                                    })
-
-                                }
-
-                            </div>
-
-                            <div>
-                                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                                {
-                                    <a asp-action="Edit" asp-route-id="@item.Id"> edit@*<img src="~/images/edit.png" width="25">*@</a>
-                                }
-                                @*<a asp-action="Details" asp-route-id="@item.Id"><img src="~/images/details.png" width="40" /></a>*@
-                                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                                {
-
-                                    <a asp-action="Delete" asp-route-id="@item.Id">delete @*<img src="~/images/delete.svg" width="25" />*@</a>
-                                }
-                            </div>
-
                         </div>
                     </div>
+                </article> <!-- card-group-item.// -->
 
-                </div>
             </div>
-        }
-    </div>
-
-</section>
+        </aside>
 
 
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="border  mx-3 pt-3 pb-3" style="border-radius:20px">
+                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+
+                        <div class="card image">
+                            <div class=" d-flex img-hover-zoom img-hover-zoom--xyz">
+                                <a asp-action="Details" asp-route-id="@item.Id"><img class="card-img-top img-fluid " src="@Html.DisplayFor(modelItem => item.Picture)"></a>
+                            </div>
+                            <div class="card-body">
+                                <h5>@Html.DisplayFor(modelItem => item.ExcurionName) </h5>
+
+                                <div class="d-flex flex-row my-2">
+                                    <div class="text-danger">BGN @Html.DisplayFor(modelItem => item.Price)</div>
+                                </div>
+                                <div class="d-flex flex-row my-2">
+
+                                    <div class="text-muted">
+                                        @Html.DisplayNameFor(modelItem => item.Discount): @Html.DisplayFor(modelItem => item.Discount) %
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row my-2">
+
+                                    @Html.DisplayNameFor(modelItem => item.StartDate): @Html.DisplayFor(modelItem => item.StartDate)
+                                </div>
+                                <div class="d-flex flex-row my-2">
+
+                                    @Html.DisplayNameFor(modelItem => item.EndDate): @Html.DisplayFor(modelItem => item.EndDate)
+                                </div>
+                                <div class="d-flex flex-row my-2">
+
+                                    @Html.DisplayNameFor(modelItem => item.MaxVisitors) Count: @Html.DisplayFor(modelItem => item.MaxVisitors)
+                                </div>
+                                <div class="d-flex flex-row my-2">
+
+
+                                    @if (this.User.Identity.IsAuthenticated)
+                                    {
+
+                                        @await Html.PartialAsync("_ReservationPartialView", new ReservationConfirmVM
+                                        {
+                                            ExcursionId = item.Id
+                                        })
+
+                                    }
+
+                                </div>
+
+                                <div>
+                                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.Id"> Edit@*<img src="~/images/edit.png" width="25">*@</a>
+                                    }
+                                    @*<a asp-action="Details" asp-route-id="@item.Id"><img src="~/images/details.png" width="40" /></a>*@
+                                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                                    {
+
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete @*<img src="~/images/delete.svg" width="25" />*@</a>
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+
+    </section>
 
 
 
-<!--<!-- Sidebar filter section -->
-<!--<section id="sidebar">
-    <div class=" pb-2 ml-2">
-        <h4 id="filt">Filters</h4>
-    </div>-->
-<!--Category and designer input-->
-<!--<form asp-controller="Product" asp-action="Index" method="get" class="border-bottom">
-    <div class="input-field mb-3">
-        <input class="input-n" type="text" name="SearchStringCategoryName">
-        <label>Category</label>
-    </div>
-    <div class="input-field">
-        <input class="input-n" type="text" name="SearchStringDesignerName">
-        <label>Designer</label>
-    </div>
-    <input type="submit" value="Filter" class="btn-n btn my-4 ml-1 input-n" />
-
-</form>
-<div class="py-2 border-bottom ml-3">
-    <h6 class="font-weight-bold mb-3">Categories</h6>
-    <div class="form-group"><a asp-controller="Product" asp-action="Decorations">Decorations</a> </div>
-    <div class="form-group"><a asp-controller="Product" asp-action="Paintings">Paintings</a> </div>
-    <div class="form-group"> <a asp-controller="Product" asp-action="Moss">Scandinavian Moss</a> </div>
-    <div class="form-group"><a asp-controller="Product" asp-action="Keys">Key Houses</a> </div>
-    <div class="form-group"> <a asp-controller="Product" asp-action="Calendars">Calendars</a> </div>
-    <div class="form-group"><a asp-controller="Product" asp-action="Albums">Albums</a> </div>
-    <div class="form-group"> <a asp-controller="Product" asp-action="Cards">Cards</a> </div>-->
-@*@foreach (var category in Model)
-    {
-        <form>
-            <div class="form-group"> <input type="checkbox"> <label >@Html.DisplayFor(modelItem => category.CategoryName)</label> </div>
-        </form>
-    }*@
-<!--</div>
-<div class="py-2 ml-3 mb-5">
-    <h6 class="font-weight-bold mb-3">Designers</h6>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=art+shop">Art Shop</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=martis+craft">Martis Craft</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=s+gifts">S Gifts</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=s+art">S Art</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=crafteria">Crafteria</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=beni+art+design">Beni Art Design</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=mossaika">Mossaika</a> </div>
-    <div class="form-group"><a href="/Product?SearchStringCategoryName=&SearchStringDesignerName=artelly">ARTELLY</a> </div>-->
-@*<form>
-        @foreach (var designer in Model)
-        {
-            <div class="form-group"> <input type="checkbox"> <label>@Html.DisplayFor(modelItem => designer.DesignerName)</label> </div>
-        }
-    </form>*@
-
-@*</div>
-
-    </section>-->*@
 
 
 
 
-
+</body>
 
 
 @section Scripts {

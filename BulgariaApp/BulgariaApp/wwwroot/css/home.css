@@ -348,5 +348,9 @@ video {
 .backGroundImage {
  /*   background-image: url('../img/envelope.png');
     background-repeat: no-repeat;*/
-  background-color:lightgray;
+/*  background-color:lightgray;*/
+}
+
+*{
+    font-family:'Times New Roman';
 }
