@@ -15,7 +15,7 @@ namespace BulgariaApp.Entities
         [MaxLength(20)]
         public string AttractionName { get; set; }
         [Required]
-        [MinLength(10, ErrorMessage = "Description must be between 50 - 5000 symbols")]
+        [MinLength(10, ErrorMessage = "Description must be between 10 - 5000 symbols")]
         [MaxLength(5000)]
         public string Description { get; set; }
         [Required]

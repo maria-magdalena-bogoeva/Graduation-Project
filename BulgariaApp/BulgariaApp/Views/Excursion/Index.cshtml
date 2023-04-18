@@ -10,12 +10,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 @*<h1>Index</h1>*@
-@if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-{
-    <p class="pt-5 pl-5">
-        <a asp-action="Create">Create New</a>
-    </p>
-}
 <style>
     .card {
         /*  border: green;*/
@@ -23,17 +17,33 @@
         /* background-color: #4c89f5;*/
         background-color: #e0e0de;
     }
+
     body {
         background-color: #192d50;
     }
+
     header {
         color: #d6c3a5;
     }
-    a{
-        font-size:20px;
+
+    a {
+        font-size: 20px;
+    }
+
+    h1 {
+        color: #d6c3a5;
     }
 </style>
+<h1 class="text-center  pt-5">Excursions</h1>
+@if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+{
+    <p class="pt-5 pl-5">
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+
 <body>
+
     @*<form asp-controller="Excursion" asp-action="Index" method="get">
             <p>
                 ExcursionName <input type="text" name="SearchStringExcursionName" />
@@ -78,7 +88,7 @@
                         <header class="card-header text-center"><h4 class="title">Discounts</h4></header>
                         <div class="pl-5 ml-5">
                             <div class="list-group list-group-flush">
-                                <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=5" class="list-group-item text-primary" style="background-color: #25447a"><strong>5% </strong></a> 
+                                <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=5" class="list-group-item text-primary" style="background-color: #25447a"><strong>5% </strong></a>
                                 <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=10" class="list-group-item text-primary" style="background-color: #25447a"><strong>10% </strong> </a>
                                 <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=20" class="list-group-item text-primary" style="background-color: #25447a"><strong>20% </strong></a>
                                 <a href="/Excursion?SearchStringExcursionName=&SearchPrice=&SearchDiscount=50" class="list-group-item text-primary" style="background-color: #25447a"><strong> 50% </strong></a>
@@ -90,11 +100,10 @@
             </div>
         </aside>
 
-
-        <div class="row">
+        <div class="row pb-5 mb-5">
             @foreach (var item in Model)
             {
-                <div class="border  mx-3 pt-3 pb-3" style="border-radius:20px">
+                <div class="border pb-5 mb-5 mx-3 pt-3 pb-3" style="border-radius:20px">
                     <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
 
                         <div class="card image">
