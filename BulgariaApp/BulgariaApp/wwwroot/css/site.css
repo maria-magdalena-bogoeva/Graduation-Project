@@ -2,30 +2,32 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-   /* color: #0366d6;*/
+    /* color: #0366d6;*/
     /*color:white;*/
     /* color:rgb(0 0 0);*/
 }
+
     a:hover {
         color: #4074ed;
     }
+
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
- /* color: white;*/
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    /* color: white;*/
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
@@ -36,34 +38,36 @@ html {
     width: 100%;
     min-height: 100%;*/
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
-  /*display: table;
+    position: relative;
+    min-height: 100%;
+    /*display: table;
     width: 100%;
     min-height: 100%;*/
 }
@@ -76,15 +80,15 @@ body {
     min-height: 100%;*/
 }
 /*.footer {*/
-    /*position:relative;*/
-  /*position: absolute;
+/*position:relative;*/
+/*position: absolute;
   bottom: 0px;
   width: 99%;
   white-space: nowrap;
   height:auto;*/
-  /*line-height: 60px;*/ /* Vertically center the text there */
+/*line-height: 60px;*/ /* Vertically center the text there */
 
-  
+
 /*}*/
 .footer {
     position: absolute;
@@ -92,9 +96,8 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
-
-   
 }
+
 .body-container {
     /*remove the container default padding attribute*/
     padding-left: 0px !important;
@@ -102,12 +105,14 @@ body {
     /*increase width as per your need*/
     max-width: 100%;
 }
+
 .homeTextFirstDivBelowSlideShow {
     text-align: center;
     vertical-align: middle;
     line-height: 650px; /* The same as your div height */
     background-color: rgb(10 10 10);
 }
+
 .childDiv {
     width: 100px;
     height: 150px;
@@ -116,9 +121,10 @@ body {
     left: 45%;
     margin: -50px 0 0 -50px;
 }
+
 .fatherDiv {
     height: 800px;
-   /* width: 300px;*/
+    /* width: 300px;*/
     position: relative;
 }
 
@@ -135,11 +141,13 @@ body {
     border-radius: 90px;
     box-shadow: 4px 4px #003f87;
 }
+
     .button:hover {
         /* background-color: rgb(252, 119, 5);*/
         background-color: #030b15;
         box-shadow: 4px 4px #16498a;
     }
+
 .buttonPop {
     background-color: #045fc8;
     border: none;
@@ -151,62 +159,340 @@ body {
     cursor: pointer;
     border-radius: 90px;
 }
-.buttonPop:hover {
-    background-color: #192d50;
-}
-   
+
+    .buttonPop:hover {
+        background-color: #192d50;
+    }
+
 .center {
-   
     margin: auto;
     width: 50%;
     padding: 10px;
-    padding-top:10px;
+    padding-top: 10px;
 }
+
 * {
     font-family: 'Times New Roman';
 }
 
 
 
+@media (min-width:200px)and (max-width: 399px) {
+    /* * {
+        font-size: 15px;
+    }
+    .name {
+        font-size: 17px;
+    }*/
+    .buttonAbout {
+        font-size: 9px
+    }
 
+    .about {
+        font-size: 25px;
+        margin-top: 30px;
+    }
+
+   /* .aboutboxtxt {
+        padding-top: 500px;
+        margin-right: 50px;
+        padding-bottom: 5px;
+        padding-left: 30px;
+    }*/
+
+    .aboutboxtxtpara {
+        padding-top: 50px;
+        padding-right: 50px;
+        padding-bottom: 5px;
+        padding-left: 50px;
+        font-size:15px;
+    }
+    .btnAbout{
+        font-size:18px;
+    }
+    .picshome {
+        height: 400px;
+    }
+    .hometxt {
+        font-size: 19px;
+        padding-top:15px;
+        
+    }
+    .homedivtxt{
+        height:200px;
+        width:400px;
+        text-align:center;
+        margin-left:55px;
+    }
+    .btnhome{
+        font-size:17px;
+    }
+    .imagehome{
+        width:100px;
+    }
+    .img-fluid{
+        margin-left:-90px;
+    }
+}
+/**/
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 400px)and (max-width: 576px) {
+    /* * {
+        font-size: 15px;
+    }
+    .name {
+        font-size: 17px;
+    }*/
+    .buttonAbout {
+        font-size: 20px
+    }
+
+    .about {
+        font-size: 25px;
+        margin-top: 30px;
+    }
+
+    .aboutboxtxtpara {
+        padding-top: 50px;
+        padding-right: 50px;
+        padding-bottom: 5px;
+        padding-left: 50px;
+        font-size: 20px;
+    }
+    .picshome {
+        height: 530px;
+    }
+    .hometxt {
+        font-size: 19px;
+        padding-top: 25px;
+    }
+    .homedivtxt {
+       
+        height: 220px;
+        width: 400px;
+        text-align: center;
+        margin-left: 65px;
+    }
+
+    .btnhome {
+        font-size: 17px;
+    }
+
+    .imagehome {
+        width: 100px;
+    }
+}
 /*
-Small devices (landscape phones, 576px and up)*/
-/*@media (min-width: 576px) {
-    * {
+Medium devices (tablets, 768px and up)*/
+@media (min-width:577px) and (max-width: 768px) {
+    /*  * {
         font-size: 15px;
     }
     .name {
         font-size: 17px;
+    }*/
+    li {
+        padding-right: 50px;
+        padding-left: 50px;
+        font-size: 25px;
     }
-}*/
+    .buttonAbout {
+        font-size: 22px
+    }
 
-/*Medium devices (tablets, 768px and up)*/
-/*@media (min-width: 768px) {
-    * {
-        font-size: 15px;
+    .about {
+        font-size: 33px;
     }
-    .name {
+
+    .aboutboxtxtpara {
+        padding-top: 30px;
+        padding-right: 50px;
+        padding-bottom: 5px;
+        padding-left: 50px;
+        font-size: 25px;
+    }
+    .picshome{
+        height:180px;
+    }
+    .hometxt {
+        font-size: 19px;
+        padding-top: 35px;
+    }
+
+    .homedivtxt {
+        height: 240px;
+        width: 600px;
+        text-align: center;
+        margin-left: 115px;
+    }
+
+    .btnhome {
         font-size: 17px;
     }
-}*/
+
+    .imagehome {
+        width: 100px;
+    }
+
+    .img-fluid1 {
+        margin-left: -90px;
+    }
+}
 
 /* Large devices (desktops, 992px and up)*/
-/*@media (min-width: 992px) {
-    * {
+@media (min-width:770px) and (max-width: 992px) {
+    /*  * {
         font-size:20px;
     }
     .name {
         font-size: 22px;
+    }*/
+    .buttonAbout {
+        font-size: 32px
     }
-}*/
+
+    .about {
+        font-size: 35px;
+    }
+
+    .aboutboxtxtpara {
+        padding-top: 30px;
+        padding-right: 50px;
+        padding-bottom: 5px;
+        padding-left: 50px;
+        font-size: 28px;
+    }
+
+    .picshome {
+        height: 340px;
+    }
+    .hometxt {
+        font-size: 19px;
+        padding-top: 25px;
+    }
+
+    .homedivtxt {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        margin-left: 105px;
+      
+    }
+
+    .btnhome {
+        font-size: 17px;
+    }
+
+    .imagehome {
+        width: 100px;
+    }
+
+    .img-fluid1 {
+        margin-left: -90px;
+     
+    }
+}
 
 /*Extra large devices (large desktops, 1200px and up)*/
-/*@media (min-width: 1200px) {
-   *{
+@media (min-width:993px)and (max-width: 1200px) {
+    /* *{
        font-size:25px;
    }
     .name {
         font-size: 27px;
+    }*/
+    .buttonAbout {
+        font-size: 38px
     }
-   
-}*/
+
+    .about {
+        font-size: 40px;
+    }
+
+    .aboutboxtxtpara {
+        padding-top: 50px;
+        padding-right: 100px;
+        padding-bottom: 5px;
+        padding-left: 100px;
+        font-size: 30px;
+    }
+    .picshome {
+        height: 400px;
+    }
+    .hometxt {
+        font-size: 19px;
+        padding-top: 25px;
+    }
+
+    .homedivtxt {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        margin-left: 120px;
+    }
+
+    .btnhome {
+        font-size: 17px;
+    }
+
+    .imagehome {
+        width: 100px;
+    }
+
+    .img-fluid1 {
+        margin-left: -90px;
+    }
+
+}
+@media (min-width:1201px) {
+    /* *{
+       font-size:25px;
+   }
+    .name {
+        font-size: 27px;
+    }*/
+    .buttonAbout {
+        font-size: 40px
+    }
+
+    .about {
+        font-size: 50px;
+    }
+
+    .aboutboxtxtpara {
+        padding-top: 50px;
+        padding-right: 100px;
+        padding-bottom: 5px;
+        padding-left: 100px;
+        font-size: 35px;
+    }
+    .picshome {
+        height: 480px;
+    }
+    .hometxt {
+        font-size: 19px;
+        padding-top: 25px;
+    }
+
+    .homedivtxt {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        margin-left: 11px;
+    }
+
+    .btnhome {
+        font-size: 17px;
+    }
+
+    .imagehome {
+        width: 100px;
+    }
+
+    .img-fluid1 {
+        margin-left: -130px;
+    }
+    .imgg{
+        margin-left:24px;
+    }
+}

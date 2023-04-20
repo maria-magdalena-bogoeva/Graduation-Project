@@ -196,9 +196,10 @@
             });
         });</script>-->*@
 
-
+    <link rel="stylesheet" href="~/css/site.css" />
 
     <style>
+     
         #myDIV {
             display: none;
             width: 100%;
@@ -206,8 +207,8 @@
             text-align: center;
             background-color: #192d50;
             margin-top: 5px;
-            padding-left: 300px;
-            padding-right: 300px;
+         /*   padding-left: 300px;
+            padding-right: 300px;*/
             text-align: justify;
         }
 
@@ -218,8 +219,8 @@
             text-align: center;
             background-color: #192d50;
             margin-top: 5px;
-            padding-left: 300px;
-            padding-right: 300px;
+            /*padding-left: 30px;
+            padding-right: 30px;*/
             text-align: justify;
         }
 
@@ -230,10 +231,10 @@
             text-align: center;
             background-color: #192d50;
             margin-top: 5px;
-            padding-left: 300px;
-            padding-right: 300px;
+          /*  padding-left: 300px;
+            padding-right: 300px;*/
             text-align: justify;
-           
+
         }
         #myDIVBG {
             display: none;
@@ -242,8 +243,7 @@
             text-align: center;
             background-color: #192d50;
             margin-top: 5px;
-            padding-left: 300px;
-            padding-right: 300px;
+            
             text-align: justify;
         }
 
@@ -262,18 +262,19 @@
                 background-color: #465261;
             }
 
+
         .containerrr {
             border: 3px solid;
             display: flex;
             justify-content: center;
             align-items: center;
-          
+
         }
         .h1 {
             color: #d6c3a5;
         }
         .h4 {
-           
+
             color:white;
             border: 4px dotted black;
         }
@@ -286,21 +287,21 @@
          text-align:center;
      }
     </style>
-    <div>
-        <div class="head"> <img class="img-fluid"  src="~/img/bglogo.png" width="150" /></div>
-        <div class="text-center head h1 pt-5 pb-5 font-weight-bold"> About Us</div>
-        <div class="head"> <img class="img-fluid"  src="~/img/bglogo.png" width="150" /></div>
+    
+        <div  style="text-align:center">
+            <h1 class="text-center head h1 pt-5 pb-5  font-weight-bold about">About Us</h1> 
+        </div>
 
-    </div>
+   
 
     <div class="row"  style="background-color: #25447a;">
 
         <div class="containerrr" style="width: 100%;height: 200px;">
-            <h2>  <button class="buttonAbout" onclick="myFunctionBG()">Why you should visit Bulgaria</button></h2>
+            <h2>  <button class="btn-block buttonAbout btnAbout "  onclick="myFunctionBG()">Why you should visit Bulgaria</button></h2>
         </div>
     </div>
-    <div class="h4" id="myDIVBG" style="background-color: #363e47; ">
-        <p>
+    <div id="myDIVBG"  class="h4 aboutboxtxt" style="background-color: #363e47; ">
+        <p class="aboutboxtxtpara">
             Bulgaria is a destination with numerous important historical sites, from the dawn of
             European civilization to modern times. Bulgarians are very proud of their heritage,
             stories and folklore still form an important part of their lives where legends and
@@ -313,22 +314,22 @@
     </div>
     <div class="row ">
         <div class="containerrr background" style="width: 33%;height: 200px;">
-            <h2> <button class="buttonAbout" onclick="myFunction()">Who are we?</button></h2>
+            <h2> <button class="buttonAbout 3divsbtn" onclick="myFunction()">Who are we?</button></h2>
         </div>
         <div class="containerrr " style="width: 33%; height: 200px;">
-            <h2>  <button class="buttonAbout" onclick="myFunction1()">What are our advantages?</button></h2>
+            <h2>  <button class="buttonAbout 3divsbtn" onclick="myFunction1()">What are our advantages?</button></h2>
         </div>
         <div class="containerrr background" style="width: 34%; height: 200px;">
-            <h2>    <button class="buttonAbout" onclick="myFunction2()">Why to trust us?</button></h2>
+            <h2>    <button class="buttonAbout 3divsbtn" onclick="myFunction2()">Why to trust us?</button></h2>
         </div>
     </div>
 
 
 
 
-    <div id="myDIV" class="h4" style="background-color: #363e47; ">
+    <div id="myDIV" class="h4 aboutboxtxt" style="background-color: #363e47; ">
     
-            <p>
+            <p class="aboutboxtxtpara">
                 Bulgaria Travel Agency is a relatively new licensed travel agency in Bulgaria. Our main goal is everyone to get
                 to know the Bulgarian sights, nature, traditions and history in an accessible way for everybody.
             </p>
@@ -336,27 +337,27 @@
        
     </div>
 
-    <div class="h4" id="myDIV1"style="background-color: #363e47; ">
-        <p>
+    <div class="h4 aboutboxtxt" id="myDIV1"style="background-color: #363e47; ">
+        <p class="aboutboxtxtpara">
             Here are just some of the things that have made us one of our customers' preferred vacation partners in
             such a short time:
         </p>
-        <ul class="pt-3 font-italic pb-3">
-            <li> our highly competent and ambitious team</li>
-            <li>   our correct partners (tour operators) and personal contacts in all countries we operate</li>
-            <li>the best offers at exclusive package prices</li>
-            <li> possibility to make a reservation entirely online</li>
+        <ul class="pt-3 font-italic pb-3 aboutboxtxt">
+            <li > our highly competent and ambitious team</li>
+            <li >   our correct partners (tour operators) and personal contacts in all countries we operate</li>
+            <li >the best offers at exclusive package prices</li>
+            <li > possibility to make a reservation entirely online</li>
         </ul>
        
 
 
-        <p>
+        <p class="aboutboxtxtpara">
             All this gives you a guarantee that, in addition to the incredible prices and conditions, as customers of
             Bulgaria, you get a guarantee of a peaceful trip and a smiling vacation!
         </p>
     </div>
-    <div class="h4" id="myDIV2"style="background-color: #363e47; ">
-        <p>
+    <div class="h4 aboutboxtxt" id="myDIV2"style="background-color: #363e47; ">
+        <p class="aboutboxtxtpara">
             Tourist agency Bulgaria offers a wide range of offers according to your preferences. With us, you can find
             weekend programs, holidays in luxurious All Inclusive hotels for both
             couples and families with children, destinations with fabulous beaches and great sights.
